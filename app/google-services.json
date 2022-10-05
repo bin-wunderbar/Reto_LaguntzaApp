@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "758054148673",
+    "project_id": "laguntzaapp",
+    "storage_bucket": "laguntzaapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758054148673:android:ec511073d3d5492a2d44c0",
+        "android_client_info": {
+          "package_name": "com.example.reto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "758054148673-7s8ptmohofff801e39nifj0gldlinfg3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUBFsXVNqIZkWkKo4t2IZ1i2Jx2TCybp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "758054148673-7s8ptmohofff801e39nifj0gldlinfg3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
