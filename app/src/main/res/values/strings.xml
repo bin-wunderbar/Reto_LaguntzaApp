@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Reto</string>
+    <string name="action_2">cerrar</string>
+    <string name="action_1">entrar</string>
 </resources>
