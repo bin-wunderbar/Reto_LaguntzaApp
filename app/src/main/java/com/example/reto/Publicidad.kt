@@ -3,18 +3,11 @@ package com.example.reto
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
-import android.widget.Button
-import android.widget.TextView
-
 import androidx.lifecycle.lifecycleScope
-
 import com.example.reto.databinding.ActivityPublicidadBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-
-
 class Publicidad : AppCompatActivity() {
 
     private lateinit var  binding: ActivityPublicidadBinding
@@ -53,6 +46,7 @@ class Publicidad : AppCompatActivity() {
 
     }
     //implementar la seguiente funcion en cada activity para mostrar publi
+    //alerta
     /*override fun onResume() {
     super.onResume()
     activarPublicidad()

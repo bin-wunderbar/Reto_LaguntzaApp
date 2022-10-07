@@ -2,16 +2,14 @@ package com.example.reto
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.annotation.NonNull
 import androidx.appcompat.app.AlertDialog
 import com.example.reto.databinding.ActivityRegisterBinding
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.Query
 
 
-class registerActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
     var numuser = 0
     private lateinit var binding: ActivityRegisterBinding
@@ -53,7 +51,7 @@ class registerActivity : AppCompatActivity() {
 
 
             if(pass == confpass) {
-                if(terminos == true){
+                if(terminos){
                 //comprobar el numero de usuarios inferior a 100
                     if(idusuario<=100){
                         saldo = 1
