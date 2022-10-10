@@ -36,7 +36,7 @@ class loginActivity : AppCompatActivity() {
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email,pass).addOnCompleteListener {
                 if(it.isSuccessful){
                     //login exitoso
-                    loginexitoso()
+                    loginexitoso(email)
 
                 }
                 else {
@@ -67,14 +67,22 @@ class loginActivity : AppCompatActivity() {
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
-    private fun loginexitoso(){
-        //alerta temporal
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage("login exitoso")
-        builder.setPositiveButton("Aceptar",null)
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
+    private fun loginexitoso(email : String){
+
+        if(email == "administrador@laguntzapp.euz"){
+            //administrador
+            startActivity(Intent(this, Admin_Activity::class.java))
+        }
+        else{
+            //alerta temporal
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Error")
+            builder.setMessage("login exitoso")
+            builder.setPositiveButton("Aceptar",null)
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
+        }
+
     }
     private fun camposvacios(){
         //alerta de campos vacios
