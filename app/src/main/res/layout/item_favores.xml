@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="384dp"
+        android:layout_height="match_parent"
+        android:clipTopadding="false"
+        android:padding="30xp"
+        card_view:cardElevation="4dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardVornelRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="384dp"
+            android:layout_height="206dp"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+
+            <TextView
+                android:id="@+id/nameTxt"
+                android:layout_width="104dp"
+                android:layout_height="33dp"
+                android:text="Mudanzas"
+                android:textColor="#CE9563"/>
+
+            <TextView
+                android:id="@+id/descriptionTxt"
+                android:layout_width="328dp"
+                android:layout_height="60dp"
+                android:text="lorem Ipsum caption et justo"
+                android:textColor="#CE9563"
+                tools:ignore="MissingConstraints"/>
+
+            <TextView
+                android:id="@+id/ubicacionTxt"
+                android:layout_width="109dp"
+                android:layout_height="33dp"
+                android:text="Txurdinaga"
+                android:textColor="#CE9563"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/caducidadTxt"
+                android:layout_width="40dp"
+                android:layout_height="33dp"
+                android:text="10"
+                android:textColor="#CE9563"
+                tools:ignore="MissingConstraints"/>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>
