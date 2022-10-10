@@ -1,14 +1,9 @@
 package com.example.reto
 
-import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
-import android.widget.Button
-import android.widget.TextView
-
 import androidx.lifecycle.lifecycleScope
-
 import com.example.reto.databinding.ActivityPublicidadBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -27,6 +22,7 @@ class Publicidad : AppCompatActivity() {
 
         // on click open main activity
         binding.cardButtonSaltar.setOnClickListener {
+            // cambiar MainActivity por nombre de la activity donde esta implementado
            // val intent = Intent(this,MainActivity::class.java)
            // startActivity(intent)
         }
@@ -65,6 +61,7 @@ fun activarPublicidad(){
                 Thread.sleep(1000)
             }
         }
+
         val intent = Intent(this@MainActivity,Publicidad::class.java)
         startActivity(intent)
     }
