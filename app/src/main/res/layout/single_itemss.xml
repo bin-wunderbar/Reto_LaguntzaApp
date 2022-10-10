@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="396dp"
+        android:layout_height="match_parent"
+        android:clipTopadding="false"
+        android:padding="30xp"
+        card_view:cardElevation="4dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardVornelRadius="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="384dp"
+            android:layout_height="87dp"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/fotoimg"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/perifl"
+                android:baselineAlignBottom="false"
+                card_view:layout_constraintBottom_toTopOf="@+id/lastChatTxt"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="8dp" />
+
+            <TextView
+                android:id="@+id/usuarioTxt"
+                android:layout_width="104dp"
+                android:layout_height="33dp"
+                android:layout_marginBottom="12dp"
+                android:text="usuario"
+                android:textColor="#CE9563"
+                card_view:layout_constraintBottom_toTopOf="@+id/lastChatTxt"
+                tools:layout_editor_absoluteX="56dp"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/lastChatTxt"
+                android:layout_width="304dp"
+                android:layout_height="33dp"
+                android:text="Hola, estas disponible"
+                android:textColor="#CE9563"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="45dp" />
+
+            <TextView
+                android:id="@+id/fechaTxt"
+                android:layout_width="40dp"
+                android:layout_height="33dp"
+                android:text="20/10"
+                android:textColor="#CE9563"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="332dp"
+                tools:layout_editor_absoluteY="44dp" />
+
+            <TextView
+                android:id="@+id/numeroMensaje"
+                android:layout_width="40dp"
+                android:layout_height="33dp"
+                android:layout_marginBottom="4dp"
+                android:text="20"
+                android:textColor="#CE9563"
+                card_view:layout_constraintBottom_toTopOf="@+id/fechaTxt"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="332dp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>
