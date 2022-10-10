@@ -32,12 +32,15 @@ class loginActivity : AppCompatActivity() {
         if(binding.txtemail.text.isNotEmpty() && binding.txtpass.text.isNotEmpty()){
         val email = binding.txtemail.text.toString()
         val pass = binding.txtpass.text.toString()
-            FirebaseAuth.getInstance().signInWithEmailAndPassword(email,pass).addOnCompleteListener {
+            //autenticar el login
+        FirebaseAuth.getInstance().signInWithEmailAndPassword(email,pass).addOnCompleteListener {
                 if(it.isSuccessful){
+                    //login exitoso
                     loginexitoso()
 
                 }
                 else {
+                    //login fallido
                     errorlogin()
                 }
 
@@ -47,6 +50,7 @@ class loginActivity : AppCompatActivity() {
 
         }
         else{
+            //campos vacios
             camposvacios()
 
         }
