@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".loginActivity"
-    android:background="@drawable/degradado">
+    android:background="@drawable/fondo">
 
     <Button
         android:id="@+id/buttonregister"

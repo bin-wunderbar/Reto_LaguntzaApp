@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Reto</string>
+
+    <string name="app_name">LaguntzApp</string>
+    <string name="userAdmin">Admin</string>
+    <string name="gestioUser">Gestionar Usuarios LaguntzApp</string>
+    <string name="verAlluser">Ver todos los usuarios</string>
+    <string name="verReportUser">Ver usuarios con reportes</string>
 </resources>
