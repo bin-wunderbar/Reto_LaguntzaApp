@@ -1,6 +1,7 @@
 package com.example.reto
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -9,8 +10,10 @@ import com.example.reto.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class loginActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityLoginBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         binding = ActivityLoginBinding.inflate(layoutInflater)
@@ -74,13 +77,8 @@ class loginActivity : AppCompatActivity() {
             startActivity(Intent(this, Admin_Activity::class.java))
         }
         else{
-            //alerta temporal
-            val builder = AlertDialog.Builder(this)
-            builder.setTitle("Error")
-            builder.setMessage("login exitoso")
-            builder.setPositiveButton("Aceptar",null)
-            val dialog: AlertDialog = builder.create()
-            dialog.show()
+            currentuser()
+            startActivity(Intent(this, Perfil_Activity::class.java))
         }
 
     }
@@ -92,5 +90,9 @@ class loginActivity : AppCompatActivity() {
         builder.setPositiveButton("Aceptar",null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
+    }
+    private fun currentuser(){
+        val sharedPreferences: SharedPreferences = getSharedPreferences("Currentuser",0)
+        sharedPreferences.edit().putString("CurrentUser",binding.txtemail.text.toString()).apply()
     }
 }

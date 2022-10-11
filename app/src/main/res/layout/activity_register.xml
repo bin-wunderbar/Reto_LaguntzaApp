@@ -136,7 +136,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtHoras"
         android:layout_width="188dp"
         android:layout_height="30dp"
         android:layout_marginTop="580dp"
