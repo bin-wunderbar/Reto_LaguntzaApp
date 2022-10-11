@@ -40,7 +40,7 @@ class Perfil_Activity : AppCompatActivity() {
                 val localidad = usuario.get("localidad")
 
                 binding.txtCiudad.setText("${localidad}")
-                binding.txtHoras.setText("${saldo}")
+                binding.txtHoras.setText("${saldo}" + "h")
                 binding.txtnombre.setText("${nombre}")
                 binding.txtapellidos.setText("${apellidos}")
                 binding.txtdescrip.setText("${descripcion}")

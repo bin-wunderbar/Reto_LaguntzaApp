@@ -66,29 +66,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtpass" />
 
-    <TextView
-        android:id="@+id/textTitulo"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="50dp"
-        android:text="LAGUNTZAPP"
-        android:textAlignment="center"
-        android:textColor="@color/teal_700"
-        android:textSize="35dp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="122dp"
-        android:layout_height="78dp"
+        android:layout_width="343dp"
+        android:layout_height="70dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/chat" />
