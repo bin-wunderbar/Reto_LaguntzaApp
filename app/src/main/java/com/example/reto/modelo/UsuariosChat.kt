@@ -1,4 +1,4 @@
-package com.example.reto
+package com.example.reto.modelo
 
 /*
 * clase UsuarioChat de tipo datos, contine las propiedades:

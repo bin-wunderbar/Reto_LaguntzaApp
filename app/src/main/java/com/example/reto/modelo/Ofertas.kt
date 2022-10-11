@@ -1,4 +1,4 @@
-package com.example.reto
+package com.example.reto.modelo
 
 /*
 * clase Ofertas de tipo datos, contine las propiedades:

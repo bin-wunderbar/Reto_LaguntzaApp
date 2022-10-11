@@ -9,11 +9,11 @@
     <androidx.cardview.widget.CardView
         android:layout_width="396dp"
         android:layout_height="match_parent"
-        android:clipTopadding="false"
-        android:padding="30xp"
+        android:clipToPadding="false"
+        android:padding="30dp"
         card_view:cardElevation="4dp"
         card_view:cardUseCompatPadding="true"
-        card_view:cardVornelRadius="5dp">
+        card_view:cardCornerRadius="5dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="384dp"
@@ -37,7 +37,7 @@
                 android:layout_width="104dp"
                 android:layout_height="33dp"
                 android:layout_marginBottom="12dp"
-                android:text="usuario"
+                android:text="@string/usuario"
                 android:textColor="#CE9563"
                 card_view:layout_constraintBottom_toTopOf="@+id/lastChatTxt"
                 tools:layout_editor_absoluteX="56dp"
@@ -47,7 +47,7 @@
                 android:id="@+id/lastChatTxt"
                 android:layout_width="304dp"
                 android:layout_height="33dp"
-                android:text="Hola, estas disponible"
+                android:text="@string/mensajeChat"
                 android:textColor="#CE9563"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="8dp"
@@ -57,7 +57,7 @@
                 android:id="@+id/fechaTxt"
                 android:layout_width="40dp"
                 android:layout_height="33dp"
-                android:text="20/10"
+                android:text="@string/fechaCorta"
                 android:textColor="#CE9563"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="332dp"
@@ -68,8 +68,10 @@
                 android:layout_width="40dp"
                 android:layout_height="33dp"
                 android:layout_marginBottom="4dp"
-                android:text="20"
+                android:text="@string/randomNumber"
                 android:textColor="#CE9563"
+                android:background="@drawable/degradado"
+
                 card_view:layout_constraintBottom_toTopOf="@+id/fechaTxt"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="332dp" />

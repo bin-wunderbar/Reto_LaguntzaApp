@@ -9,11 +9,11 @@
     <androidx.cardview.widget.CardView
         android:layout_width="384dp"
         android:layout_height="match_parent"
-        android:clipTopadding="false"
-        android:padding="30xp"
+        android:clipToPadding="false"
+        android:padding="30dp"
         card_view:cardElevation="4dp"
         card_view:cardUseCompatPadding="true"
-        card_view:cardVornelRadius="5dp">
+        card_view:cardCornerRadius="5dp">
 
         <LinearLayout
             android:layout_width="384dp"
@@ -24,24 +24,28 @@
 
             <TextView
                 android:id="@+id/nameTxt"
-                android:layout_width="104dp"
-                android:layout_height="33dp"
-                android:text="Mudanzas"
-                android:textColor="#CE9563"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="@string/randomFavor"
+                android:textColor="#CE9563" />
 
             <TextView
                 android:id="@+id/descriptionTxt"
-                android:layout_width="328dp"
+                android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="lorem Ipsum caption et justo"
+                android:layout_marginBottom="10dp"
+                android:text="@string/lorem"
                 android:textColor="#CE9563"
-                tools:ignore="MissingConstraints"/>
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/ubicacionTxt"
-                android:layout_width="109dp"
+                android:layout_width="wrap_content"
                 android:layout_height="33dp"
-                android:text="Txurdinaga"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/txurdinaga"
                 android:textColor="#CE9563"
                 tools:ignore="MissingConstraints" />
 
@@ -49,9 +53,9 @@
                 android:id="@+id/caducidadTxt"
                 android:layout_width="40dp"
                 android:layout_height="33dp"
-                android:text="10"
+                android:text="@string/randomNumber"
                 android:textColor="#CE9563"
-                tools:ignore="MissingConstraints"/>
+                tools:ignore="MissingConstraints" />
 
 
         </LinearLayout>

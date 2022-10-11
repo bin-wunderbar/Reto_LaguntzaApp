@@ -3,7 +3,9 @@ package com.example.reto
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.reto.adapter.RvAdapterOfertas
 import com.example.reto.databinding.ActivityListaOfertasBinding
+import com.example.reto.modelo.Ofertas
 
 class ListaOfertasActivity : AppCompatActivity() {
     lateinit private var binding: ActivityListaOfertasBinding

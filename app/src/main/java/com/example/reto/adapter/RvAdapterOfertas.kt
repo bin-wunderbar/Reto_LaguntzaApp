@@ -1,17 +1,20 @@
-package com.example.reto
+package com.example.reto.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.reto.R
 import com.example.reto.databinding.ItemFavoresBinding
+import com.example.reto.modelo.Ofertas
 
 class RvAdapterOfertas(var listaOfertas: List<Ofertas>) :RecyclerView.Adapter<RvAdapterOfertas.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view= LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.item_favores, parent, false
+            .inflate(
+                R.layout.item_favores, parent, false
             )
         return ViewHolder(view)
     }
@@ -24,7 +27,7 @@ class RvAdapterOfertas(var listaOfertas: List<Ofertas>) :RecyclerView.Adapter<Rv
 
     class ViewHolder (view: View) :RecyclerView.ViewHolder(view) {
         val binding = ItemFavoresBinding.bind(view)
-        fun bind(oferta:Ofertas){
+        fun bind(oferta: Ofertas){
 
             binding.nameTxt.text              = oferta.name
             binding.descriptionTxt.text       = oferta.description
