@@ -31,8 +31,8 @@
             android:name=".Data_change_Activity"
             android:exported="false">
             <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Perfil_Activity" />
         </activity>
         <activity
             android:name=".registerActivity"

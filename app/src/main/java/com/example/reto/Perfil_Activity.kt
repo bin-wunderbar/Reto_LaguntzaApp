@@ -1,5 +1,6 @@
 package com.example.reto
 
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,8 +19,18 @@ class Perfil_Activity : AppCompatActivity() {
         setContentView(binding.root)
         cargarperfil()
 
+        binding.btneditardatos.setOnClickListener {
+            startActivity(Intent(this, Data_change_Activity::class.java))
+        }
 
 
+
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        cargarperfil()
     }
 
 
@@ -38,7 +49,8 @@ class Perfil_Activity : AppCompatActivity() {
                 val saldo = usuario.get("saldo")
                 val descripcion = usuario.get("descripcion")
                 val localidad = usuario.get("localidad")
-
+                val id = usuario.get("id")
+                sharedPreferences.edit().putString("Userid",id.toString()).apply()
                 binding.txtCiudad.setText("${localidad}")
                 binding.txtHoras.setText("${saldo}" + "h")
                 binding.txtnombre.setText("${nombre}")
