@@ -1,4 +1,4 @@
-package com.example.reto
+package com.example.reto.modelo
 
 import com.example.reto.modelo.UsuariosChat
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Reto</string>
+    <string name="app_name">LaguntzApp</string>
     <string name="action_2">cerrar</string>
     <string name="action_1">entrar</string>
     <string name="randomNumber">20</string>
@@ -11,4 +11,5 @@
     <string name="randomFavor">Mudanzas</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="parrafo">Anunciate con nosotros</string>
 </resources>

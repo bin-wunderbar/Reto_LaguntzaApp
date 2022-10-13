@@ -67,8 +67,8 @@
 
             <TextView
                 android:id="@+id/numeroMensaje"
-                android:layout_width="40dp"
-                android:layout_height="33dp"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:background="@drawable/ic_message"
                 tools:text="1"
                 android:textColor="#CE9563"
@@ -76,7 +76,7 @@
                 card_view:layout_constraintEnd_toEndOf="parent"
                 card_view:layout_constraintTop_toTopOf="parent"
                 tools:ignore="MissingConstraints"
-                tools:textAlignment="center"/>
+                android:textAlignment="center"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

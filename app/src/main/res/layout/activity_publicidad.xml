@@ -1,66 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/card"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="8dp">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <!-- Imagen -->
-        <ImageView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/publicidad_media"/>
+            android:layout_height="match_parent"
+            android:background="@drawable/fondo">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/publicidad_media"/>
 
-            <!-- Titulo de la publicidad -->
-            <TextView
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cardButtonSaltar"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Advertising"
-                android:textAppearance="?attr/textAppearanceHeadline6" />
-
-        </LinearLayout>
-
-        <!-- Button, parrafo contador de segundos-->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:orientation="horizontal">
+                android:text="Saltar"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
             <TextView
                 android:id="@+id/txtContador"
                 android:layout_width="166dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="100dp"
-                android:text="Saltar en "
+                android:text="Saltar Publicidad en "
                 android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="?android:attr/textColorSecondary" />
+                android:textColor="?android:attr/textColorSecondary"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
-            <com.google.android.material.button.MaterialButton
-                style="?attr/borderlessButtonStyle"
+            <TextView
+                android:id="@+id/tituloPub"
                 android:layout_width="wrap_content"
-                android:id="@+id/cardButtonSaltar"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="100dp"
-                android:text="Saltar"
-                android:textAlignment="center" />
-        </LinearLayout>
+                android:text="Advertising"
+                android:textAllCaps="true"
+                android:textAppearance="@style/texto"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/img"/>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/Parrafo"
+                android:layout_width="match_parent"
+                android:layout_height="124dp"
+                android:text="@string/parrafo"
+                android:textSize="30sp"
+                android:textAppearance="?attr/textAppearanceBody2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="60dp"
+                app:layout_constraintTop_toBottomOf="@id/tituloPub"/>
 
 
-</com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

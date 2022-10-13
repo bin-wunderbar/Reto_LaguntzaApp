@@ -9,6 +9,8 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reto.adapter.RvAdapterOfertas
 import com.example.reto.databinding.ActivityListaOfertasBinding
+import com.example.reto.modelo.OfertasProvider
+
 
 class ListaOfertasActivity : AppCompatActivity() {
     private lateinit var binding: ActivityListaOfertasBinding
@@ -19,7 +21,16 @@ class ListaOfertasActivity : AppCompatActivity() {
         binding = ActivityListaOfertasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // carga los datos obtenidos de viewholder
         iniciarRecyclerView()
+
+        // button flotante provesional para navigar entre activitys
+        binding.back.setOnClickListener {
+            finish()
+        }
+
+        // llama a la activity publicidad cada minuto
+        activarPublicidad(this)
 
         toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
         binding.drawerLayout.addDrawerListener(toggle)
@@ -35,6 +46,12 @@ class ListaOfertasActivity : AppCompatActivity() {
             }
             true
         }
+    }
+
+    //implementar la seguiente funcion en cada activity para mostrar publi
+    override fun onResume() {
+        super.onResume()
+        activarPublicidad(this)
     }
 
     private fun iniciarRecyclerView(){

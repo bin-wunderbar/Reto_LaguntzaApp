@@ -1,8 +1,5 @@
 package com.example.reto
 
-
-import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
@@ -10,12 +7,12 @@ import com.example.reto.databinding.ActivityPublicidadBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.util.*
+
 
 
 class Publicidad : AppCompatActivity() {
 
-    private lateinit var  binding: ActivityPublicidadBinding
+    private lateinit var binding: ActivityPublicidadBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPublicidadBinding.inflate(layoutInflater)
@@ -24,18 +21,9 @@ class Publicidad : AppCompatActivity() {
         binding.cardButtonSaltar.isEnabled = false
 
         // on click open main activity
-       // binding.cardButtonSaltar.setOnClickListener {
-            // cambiar MainActivity por nombre de la activity donde esta implementado
-           // val intent = Intent(this,MainActivity::class.java)
-           // startActivity(intent)
-       // }
-
-
-    }
-     fun acceso(obj:Objects){
         binding.cardButtonSaltar.setOnClickListener {
-            val intent = Intent(this,obj::class.java)
-            startActivity(intent)
+            finish()
+
         }
     }
 
@@ -44,9 +32,9 @@ class Publicidad : AppCompatActivity() {
         // desactivar button saltar por defecto
         binding.cardButtonSaltar.isEnabled = false
 
-        lifecycleScope.launch{
+        lifecycleScope.launch {
             withContext(Dispatchers.IO) {
-                for (i in 5 downTo 1){
+                for (i in 5 downTo 1) {
                     binding.txtContador.setText("Saltar publicidad en ${i}")
                     Thread.sleep(1000)
                 }
@@ -54,26 +42,8 @@ class Publicidad : AppCompatActivity() {
             binding.cardButtonSaltar.isEnabled = true
             binding.txtContador.setText("")
         }
-
-
     }
-    //implementar la seguiente funcion en cada activity para mostrar publi
-    /*override fun onResume() {
-    super.onResume()
-    activarPublicidad()
-}
-fun activarPublicidad(){
-    lifecycleScope.launch{
-        withContext(Dispatchers.IO) {
-        // tiempo en el que espera para mostrar publicidad cada vez
-            for (i in 60 downTo 1){
-                Thread.sleep(1000)
-            }
-        }
-
-        val intent = Intent(this@MainActivity,Publicidad::class.java)
-        startActivity(intent)
-    }
-}*/
 
 }
+
+

@@ -14,13 +14,13 @@
         android:theme="@style/Theme.Reto"
         tools:targetApi="31">
         <activity
-            android:name=".ListaChatActivity"
+            android:name=".ListaOfertasActivity"
             android:exported="false" />
         <activity
             android:name=".Publicidad"
             android:exported="false" />
         <activity
-            android:name=".ListaOfertasActivity"
+            android:name=".ListaChatActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
