@@ -7,7 +7,7 @@
 
 
     <androidx.cardview.widget.CardView
-        android:layout_width="384dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:padding="30dp"
@@ -15,50 +15,75 @@
         card_view:cardUseCompatPadding="true"
         card_view:cardCornerRadius="5dp">
 
-        <LinearLayout
-            android:layout_width="384dp"
-            android:layout_height="206dp"
-            android:orientation="vertical"
-            android:padding="8dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="172dp"
+            android:orientation="vertical">
 
 
             <TextView
                 android:id="@+id/nameTxt"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
                 android:text="@string/randomFavor"
-                android:textColor="#CE9563" />
+                android:textColor="#CE9563"
+                android:textSize="24dp"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/descriptionTxt"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginBottom="10dp"
                 android:text="@string/lorem"
                 android:textColor="#CE9563"
+                android:layout_marginTop="10dp"
+                card_view:layout_constraintTop_toBottomOf="@id/nameTxt"
                 tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/ubicacionTxt"
                 android:layout_width="wrap_content"
-                android:layout_height="33dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="4dp"
                 android:text="@string/txurdinaga"
                 android:textColor="#CE9563"
+                card_view:layout_constraintStart_toStartOf="@id/location"
+                card_view:layout_constraintTop_toBottomOf="@id/descriptionTxt"
                 tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/caducidadTxt"
-                android:layout_width="40dp"
-                android:layout_height="33dp"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
                 android:text="@string/randomNumber"
                 android:textColor="#CE9563"
+                android:layout_marginStart="6dp"
+                card_view:layout_constraintStart_toEndOf="@id/imageTime"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="24dp"
+                android:layout_marginTop="4dp"
+                card_view:layout_constraintTop_toBottomOf="@id/descriptionTxt"
+                card_view:srcCompat="@drawable/ic_location"
+                tools:layout_editor_absoluteX="0dp"
+                tools:ignore="MissingConstraints" />
+
+            <ImageView
+                android:id="@+id/imageTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card_view:srcCompat="@drawable/ic_time"
+                card_view:layout_constraintBottom_toBottomOf="parent"
                 tools:ignore="MissingConstraints" />
 
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.cardview.widget.CardView>

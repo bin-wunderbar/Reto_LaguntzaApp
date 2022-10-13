@@ -1,46 +1,60 @@
 package com.example.reto
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reto.adapter.RvAdapterChat
 import com.example.reto.databinding.ActivityListaChatBinding
 import com.example.reto.modelo.UsuariosChat
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class ListaChatActivity : AppCompatActivity() {
-    lateinit private var binding: ActivityListaChatBinding
-    lateinit var listachat :List<UsuariosChat>
-    lateinit private var rv: RvAdapterChat
+    private lateinit var binding: ActivityListaChatBinding
+    lateinit var toggle: ActionBarDrawerToggle
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityListaChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // set the toolbar to the activity's toolbar
-        setSupportActionBar(binding.toolbar)
+        // carga los datos obtenidos de viewholder
+        iniciarRecyclerView()
 
 
-        cargarDatos()
+        toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
+        binding.drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-
-        rv = RvAdapterChat(listachat)
-        binding.rvListChat.adapter= rv
+        binding.navig.setNavigationItemSelectedListener{
+            when(it.itemId) {
+                R.id.cat-> startActivity(intent)
+                R.id.cat2-> Toast.makeText(applicationContext,"is clicked item 2", Toast.LENGTH_SHORT).show()
+                R.id.cat3-> Toast.makeText(applicationContext,"is clicked item 3", Toast.LENGTH_SHORT).show()
+                R.id.cat4-> Toast.makeText(applicationContext,"is clicked item 4", Toast.LENGTH_SHORT).show()
+            }
+            true
+        }
     }
-    // inflar el menu, añade items a la action bar si ello existe
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        getMenuInflater().inflate(R.menu.menu_chat, menu)
-        return true
+
+    private fun iniciarRecyclerView(){
+        binding.rvListChat.layoutManager=LinearLayoutManager(this)
+        binding.rvListChat.adapter = RvAdapterChat(ChatProvider.listachat)
     }
 
-    fun cargarDatos(){
-        listachat = listOf(
-            UsuariosChat("Alexander","Hello dear","30/09",2),
-            UsuariosChat("Alexander","Hola, estas libre","01/10",50),
-            UsuariosChat("Alexander","El plan de la tarde sigue en pie","08/10",4),
-            UsuariosChat("Alexander","Genial","08/10",7),
-            UsuariosChat("Alexander","Llamame cuando puedas","09/10",3),
-            UsuariosChat("Alexander","lorem lapsom","10/10",1),
-        )
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (toggle.onOptionsItemSelected(item)) {
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }

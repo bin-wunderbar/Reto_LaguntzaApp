@@ -1,41 +1,28 @@
 package com.example.reto.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reto.R
-import com.example.reto.databinding.ItemFavoresBinding
 import com.example.reto.modelo.Ofertas
 
-class RvAdapterOfertas(var listaOfertas: List<Ofertas>) :RecyclerView.Adapter<RvAdapterOfertas.ViewHolder>(){
+class RvAdapterOfertas (private val ofertasList: List<Ofertas>): RecyclerView.Adapter<OfertasViewHolder>(){
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OfertasViewHolder {
         val view= LayoutInflater
             .from(parent.context)
-            .inflate(
-                R.layout.item_favores, parent, false
-            )
-        return ViewHolder(view)
+            .inflate(R.layout.item_favores, parent, false)
+        return OfertasViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(listaOfertas[position])
+    override fun onBindViewHolder(holder: OfertasViewHolder, position: Int) {
+        holder.bind(ofertasList[position])
     }
 
-    override fun getItemCount(): Int { return listaOfertas.size }
-
-    class ViewHolder (view: View) :RecyclerView.ViewHolder(view) {
-        val binding = ItemFavoresBinding.bind(view)
-        fun bind(oferta: Ofertas){
-
-            binding.nameTxt.text              = oferta.name
-            binding.descriptionTxt.text       = oferta.description
-            binding.ubicacionTxt.text         = oferta.ubicacion
-            binding.caducidadTxt.text         = oferta.caducidad.toString()
-        }
+    override fun getItemCount(): Int = ofertasList.size
 
 
-    }
+
 
 }
+

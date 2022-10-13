@@ -7,7 +7,7 @@
 
 
     <androidx.cardview.widget.CardView
-        android:layout_width="396dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:padding="30dp"
@@ -16,31 +16,32 @@
         card_view:cardCornerRadius="5dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="384dp"
+            android:layout_width="match_parent"
             android:layout_height="87dp"
-            android:orientation="vertical"
-            android:padding="8dp">
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/fotoimg"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginBottom="5dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:background="@drawable/perifl"
-                android:baselineAlignBottom="false"
-                card_view:layout_constraintBottom_toTopOf="@+id/lastChatTxt"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="8dp" />
+                card_view:layout_constraintTop_toTopOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/usuarioTxt"
                 android:layout_width="104dp"
                 android:layout_height="33dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginBottom="12dp"
                 android:text="@string/usuario"
-                android:textColor="#CE9563"
-                card_view:layout_constraintBottom_toTopOf="@+id/lastChatTxt"
-                tools:layout_editor_absoluteX="56dp"
+                android:textColor="@color/teal_700"
+                android:textSize="24dp"
+                android:layout_marginStart="12dp"
+                card_view:layout_constraintStart_toEndOf="@id/fotoimg"
+                card_view:layout_constraintTop_toTopOf="parent"
+
                 tools:ignore="MissingConstraints" />
 
             <TextView
@@ -50,31 +51,32 @@
                 android:text="@string/mensajeChat"
                 android:textColor="#CE9563"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="45dp" />
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"/>
 
             <TextView
                 android:id="@+id/fechaTxt"
                 android:layout_width="40dp"
                 android:layout_height="33dp"
                 android:text="@string/fechaCorta"
+                android:layout_marginEnd="30dp"
                 android:textColor="#CE9563"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="332dp"
-                tools:layout_editor_absoluteY="44dp" />
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
                 android:id="@+id/numeroMensaje"
                 android:layout_width="40dp"
                 android:layout_height="33dp"
-                android:layout_marginBottom="4dp"
-                android:text="@string/randomNumber"
+                android:background="@drawable/ic_message"
+                tools:text="1"
                 android:textColor="#CE9563"
-                android:background="@drawable/degradado"
-
-                card_view:layout_constraintBottom_toTopOf="@+id/fechaTxt"
+                android:layout_marginEnd="30dp"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent"
                 tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="332dp" />
+                tools:textAlignment="center"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

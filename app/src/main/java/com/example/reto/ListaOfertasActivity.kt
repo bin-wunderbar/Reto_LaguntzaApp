@@ -3,35 +3,51 @@ package com.example.reto
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reto.adapter.RvAdapterOfertas
 import com.example.reto.databinding.ActivityListaOfertasBinding
-import com.example.reto.modelo.Ofertas
 
 class ListaOfertasActivity : AppCompatActivity() {
-    lateinit private var binding: ActivityListaOfertasBinding
-    lateinit var listaOfertas :List<Ofertas>
-    lateinit private var rv: RvAdapterOfertas
-
+    private lateinit var binding: ActivityListaOfertasBinding
+    lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityListaOfertasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        cargarDatos()
+        iniciarRecyclerView()
 
+        toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
+        binding.drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        rv = RvAdapterOfertas(listaOfertas)
-        binding.rvOfertas.adapter = rv
+        binding.navig.setNavigationItemSelectedListener{
+            when(it.itemId) {
+                R.id.cat-> startActivity(intent)
+                R.id.cat2-> Toast.makeText(applicationContext,"is clicked item 2", Toast.LENGTH_SHORT).show()
+                R.id.cat3-> Toast.makeText(applicationContext,"is clicked item 3", Toast.LENGTH_SHORT).show()
+                R.id.cat4-> Toast.makeText(applicationContext,"is clicked item 4", Toast.LENGTH_SHORT).show()
+            }
+            true
+        }
     }
-    fun cargarDatos(){
-        listaOfertas = listOf(
-            Ofertas("Modanzas", "lorem Ipsum caption et justo eiusmod tempor incididunt ut lab","Sestao",10),
-            Ofertas("Cuidado mayores", "lorem Ipsum caption et justo eiusmod tempor incididunt ut lab","Sestao",10),
-            Ofertas("Lunch comidas", "lorem Ipsum caption et justo eiusmod tempor incididunt ut lab","Sestao",10),
-            Ofertas("Pintar salon", "lorem Ipsum caption et justo eiusmod tempor incididunt ut lab","Sestao",10),
-            Ofertas("Lorem Ipsom", "lorem Ipsum caption et justo eiusmod tempor incididunt ut lab","Sestao",10),
-        )
+
+    private fun iniciarRecyclerView(){
+        binding.rvOfertas.layoutManager = LinearLayoutManager(this)
+        binding.rvOfertas.adapter = RvAdapterOfertas(OfertasProvider.listaOfertas)
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (toggle.onOptionsItemSelected(item)) {
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 
 }

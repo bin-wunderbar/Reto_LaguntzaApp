@@ -9,4 +9,6 @@
     <string name="lorem">lorem Ipsum caption et justo</string>
     <string name="txurdinaga">Txurdinaga</string>
     <string name="randomFavor">Mudanzas</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

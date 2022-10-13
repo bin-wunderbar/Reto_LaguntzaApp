@@ -1,6 +1,8 @@
 package com.example.reto
 
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
@@ -8,6 +10,7 @@ import com.example.reto.databinding.ActivityPublicidadBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.util.*
 
 
 class Publicidad : AppCompatActivity() {
@@ -21,13 +24,19 @@ class Publicidad : AppCompatActivity() {
         binding.cardButtonSaltar.isEnabled = false
 
         // on click open main activity
-        binding.cardButtonSaltar.setOnClickListener {
+       // binding.cardButtonSaltar.setOnClickListener {
             // cambiar MainActivity por nombre de la activity donde esta implementado
            // val intent = Intent(this,MainActivity::class.java)
            // startActivity(intent)
+       // }
+
+
+    }
+     fun acceso(obj:Objects){
+        binding.cardButtonSaltar.setOnClickListener {
+            val intent = Intent(this,obj::class.java)
+            startActivity(intent)
         }
-
-
     }
 
     override fun onResume() {

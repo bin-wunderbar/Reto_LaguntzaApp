@@ -7,4 +7,10 @@ package com.example.reto.modelo
 * - fecha: fecha ha recibido ultimo mensaje, usaremos de tipo String de momento
 * - numero: de tipo int indica cuantos mensajes estan sin leer
 * */
-data class UsuariosChat(val usuario :String ="", val mensaje : String ="", val fecha :String ="", val numero : Int = 0){}
+data class UsuariosChat(
+    val usuario :String,
+    val mensaje :String,
+    val fecha :String,
+    val numero : Int,
+    val photo: String
+    )
