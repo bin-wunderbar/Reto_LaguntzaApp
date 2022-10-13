@@ -5,11 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import com.example.reto.databinding.ActivityDataChangeBinding
-import com.example.reto.databinding.ActivityPerfilBinding
-import com.google.firebase.auth.AuthCredential
-import com.google.firebase.auth.EmailAuthProvider.getCredential
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 
 class Data_change_Activity : AppCompatActivity() {

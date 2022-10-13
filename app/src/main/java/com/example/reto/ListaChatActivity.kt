@@ -6,14 +6,10 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.reto.adapter.RvAdapterChat
 import com.example.reto.databinding.ActivityListaChatBinding
 import com.example.reto.modelo.ChatProvider
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class ListaChatActivity : AppCompatActivity() {
     private lateinit var binding: ActivityListaChatBinding
@@ -29,8 +25,7 @@ class ListaChatActivity : AppCompatActivity() {
 
         // button provesional para navigar entre activitys
         binding.back.setOnClickListener {
-            var intent = Intent(this, ListaOfertasActivity::class.java)
-            startActivity(intent)
+           finish()
         }
 
 

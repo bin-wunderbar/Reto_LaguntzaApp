@@ -21,9 +21,15 @@ class Perfil_Activity : AppCompatActivity() {
         binding.btneditardatos.setOnClickListener {
             startActivity(Intent(this, Data_change_Activity::class.java))
         }
+        binding.btnFavores.setOnClickListener {
+            startActivity(Intent(this, ListaOfertasActivity::class.java))
+        }
+        binding.btnChat.setOnClickListener {
+            startActivity(Intent(this, ListaChatActivity::class.java))
+        }
 
-
-
+        // llama a la activity publicidad cada minuto
+        activarPublicidad(this)
 
     }
 
