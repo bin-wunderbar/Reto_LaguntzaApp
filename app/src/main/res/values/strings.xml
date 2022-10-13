@@ -1,15 +1,8 @@
 <resources>
+
     <string name="app_name">LaguntzApp</string>
-    <string name="action_2">cerrar</string>
-    <string name="action_1">entrar</string>
-    <string name="randomNumber">20</string>
-    <string name="fechaCorta">20/10</string>
-    <string name="mensajeChat">Hola, estas disponible</string>
-    <string name="usuario">usuario</string>
-    <string name="lorem">lorem Ipsum caption et justo</string>
-    <string name="txurdinaga">Txurdinaga</string>
-    <string name="randomFavor">Mudanzas</string>
-    <string name="open">Open</string>
-    <string name="close">Close</string>
-    <string name="parrafo">Anunciate con nosotros</string>
+    <string name="userAdmin">Admin</string>
+    <string name="gestioUser">Gestionar Usuarios LaguntzApp</string>
+    <string name="verAlluser">Ver todos los usuarios</string>
+    <string name="verReportUser">Ver usuarios con reportes</string>
 </resources>
