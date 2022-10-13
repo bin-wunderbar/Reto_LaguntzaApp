@@ -41,26 +41,30 @@
 
 
     <Button
-        android:id="@+id/btnhacerfavor"
+        android:id="@+id/btnFavores"
+        style="@style/botones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/botonesestilo"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:text="Hacer un favor"
+        android:text="Favores"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.805" />
 
     <Button
-        android:id="@+id/btnpedirfavor"
+        android:id="@+id/btneditardatos"
+        style="@style/botones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="256dp"
+        android:layout_marginEnd="28dp"
         android:background="@drawable/botonesestilo"
-        android:text="Pedir un favor"
+        android:text="Opciones de cuenta"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:id="@+id/frameLayout"

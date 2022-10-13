@@ -45,8 +45,7 @@ class Perfil_Activity : AppCompatActivity() {
                 binding.txtapellidos.setText("${apellidos}")
                 binding.txtdescrip.setText("${descripcion}")
 
-                //binding.lblDescripcion.setText("${descripcion}")
-                //binding.lblPrecio.setText("${precio}")
+
 
 
 
