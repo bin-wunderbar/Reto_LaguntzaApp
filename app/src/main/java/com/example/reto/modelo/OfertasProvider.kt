@@ -1,6 +1,9 @@
 package com.example.reto.modelo
 
-import com.example.reto.modelo.Ofertas
+/*
+* clase estatica tipo list para
+*
+* */
 
 class OfertasProvider {
     companion object{

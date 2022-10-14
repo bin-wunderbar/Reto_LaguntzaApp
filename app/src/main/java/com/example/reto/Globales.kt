@@ -15,7 +15,6 @@ fun activarPublicidad( actividad: AppCompatActivity) {
                 Thread.sleep(1000)
             }
         }
-        val intent = Intent(actividad, Publicidad::class.java)
-        actividad.startActivity(intent)
+        actividad.startActivity(Intent(actividad, Publicidad::class.java))
     }
 }

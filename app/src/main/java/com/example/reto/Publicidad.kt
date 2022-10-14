@@ -1,5 +1,6 @@
 package com.example.reto
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
@@ -20,13 +21,14 @@ class Publicidad : AppCompatActivity() {
         // button saltar  desactivado por defecto
         binding.cardButtonSaltar.isEnabled = false
 
-        // on click open main activity
+        // on click cierra la activity actual
         binding.cardButtonSaltar.setOnClickListener {
             finish()
 
         }
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onResume() {
         super.onResume()
         // desactivar button saltar por defecto

@@ -6,6 +6,7 @@ package com.example.reto.modelo
 * - description: pequeño resumen de la oferta, tipo String
 * - ubicacion: donde se ha publicado la oferta, tipo String de momento
 * - caducidad: de tipo int indica cuando caduda la oferta
+* - photo: de tipo String de momento no se le da uso, para futuras actualizaciones
 * */
 data class Ofertas(
     val name: String,

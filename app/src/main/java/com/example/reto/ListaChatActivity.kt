@@ -28,38 +28,11 @@ class ListaChatActivity : AppCompatActivity() {
            finish()
         }
 
-
-        toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
-        binding.drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-        binding.navig.setNavigationItemSelectedListener{menuItem->
-
-            when(menuItem.itemId) {
-                R.id.cat-> {
-                    startActivity(intent)
-                    true
-                }
-                R.id.cat2-> {
-                    Toast.makeText(applicationContext,"is clicked item 2", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.cat3-> {
-                    Toast.makeText(applicationContext,"is clicked item 3", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                R.id.cat4-> {
-                    Toast.makeText(applicationContext,"is clicked item 4", Toast.LENGTH_SHORT).show()
-                    true
-                }
-                else -> false
-            }
-
-
-        }
+        // menu navigation desplegable
+        cargarNavigationMenu()
 
     }
+
     //implementar la seguiente funcion en cada activity para mostrar publi
     override fun onResume() {
         super.onResume()
@@ -78,8 +51,36 @@ class ListaChatActivity : AppCompatActivity() {
         }
     return super.onOptionsItemSelected(item)
     }
+    // carga menu desplegable
+    private fun cargarNavigationMenu() {
+        toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
+        binding.drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        binding.navig.setNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.cat -> startActivity(intent)
+                R.id.cat2 -> Toast.makeText(
+                    applicationContext,
+                    "is clicked item 2",
+                    Toast.LENGTH_SHORT
+                ).show()
+                R.id.cat3 -> Toast.makeText(
+                    applicationContext,
+                    "is clicked item 3",
+                    Toast.LENGTH_SHORT
+                ).show()
+                R.id.cat4 -> Toast.makeText(
+                    applicationContext,
+                    "is clicked item 4",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            true
+        }
 
+    }
 
 }
 
