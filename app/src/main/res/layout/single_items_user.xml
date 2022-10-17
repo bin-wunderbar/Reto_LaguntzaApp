@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        card_view:cardCornerRadius="5dp"
+        card_view:cardElevation="4dp"
+        card_view:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/contenedorUser"
+            android:layout_width="393dp"
+            android:layout_height="62dp"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+
+            <ImageView
+                android:id="@+id/imgFoto"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:background="@drawable/account"
+                android:layout_marginStart="5dp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="82dp"
+                android:layout_height="33dp"
+                android:text="Nombre"
+                android:textColor="#CE9563"
+                android:layout_marginEnd="10dp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toStartOf="@id/tvApellido"
+                />
+
+            <TextView
+                android:id="@+id/tvApellido"
+                android:layout_width="91dp"
+                android:layout_height="33dp"
+                android:text="Apellido"
+                android:textColor="#CE9563"
+                android:layout_marginEnd="10dp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toStartOf="@id/Reportes" />
+
+            <TextView
+                android:id="@+id/Reportes"
+                android:layout_width="72dp"
+                android:layout_height="33dp"
+                android:hint="Reportes"
+                android:textColorHint="#CE9563"
+                android:layout_marginEnd="20dp"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toStartOf="@id/numReportes"/>
+
+            <EditText
+                android:id="@+id/numReportes"
+                android:layout_width="24dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="#CE9563"
+                android:text="0"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

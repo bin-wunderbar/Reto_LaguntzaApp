@@ -7,6 +7,7 @@
     android:background="@drawable/fondo"
     tools:context=".Admin_Activity">
 
+
     <TextView
         android:id="@+id/txtAdmin"
         android:layout_width="wrap_content"
@@ -16,6 +17,7 @@
         android:hint="@string/userAdmin"
         style="@style/texto"
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,12 +26,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="191dp"
-        android:hint="@string/gestioUser"
         style="@style/texto"
         android:textColorHint="@color/white"
+        android:layout_marginBottom="98dp"
+        android:text="@string/gestionar_usuarios_laguntzaapp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 
     <RadioGroup
@@ -50,7 +55,7 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/fondo_boton"
             android:checked="false"
-            android:text="Ver todos los usuarios"
+            android:text="@string/ver_todos_los_usuarios"
             app:layout_constraintBottom_toTopOf="@+id/btnradioReportUser"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,11 +68,13 @@
             android:layout_marginBottom="302dp"
             style="@style/botones"
             android:background="@drawable/fondo_boton"
-            android:text="Ver usuarios con reportes"
+            android:text="@string/ver_usuarios_con_reportes"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/btnradioListarUser"
             app:layout_constraintTop_toBottomOf="@+id/btnradioListarUser" />
 
     </RadioGroup>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

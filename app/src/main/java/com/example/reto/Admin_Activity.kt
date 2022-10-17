@@ -15,18 +15,13 @@ class Admin_Activity : AppCompatActivity() {
 
         //listar todos los usuarios
         binding.btnradioListarUser.setOnClickListener(){
-            val intent = Intent (this, ListAllUser_Activity::class.java).apply {
+            startActivity(Intent (this@Admin_Activity, ListAllUser_Activity::class.java))
 
             }
-            startActivity(intent)
-        }
+
         //listar solo usuarios con reportes
         binding.btnradioReportUser.setOnClickListener(){
-            //val intent = Intent(this, ReportUserActivity::class.java).apply {
-            val intent = Intent (this, ListAllUser_Activity::class.java).apply {
-
-            }
-            startActivity(intent)
+            startActivity(Intent (this@Admin_Activity, ListReportedUser_Activity::class.java))
         }
 
 

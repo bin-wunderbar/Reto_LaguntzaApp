@@ -29,6 +29,21 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".ListAllUser_Activity"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Admin_Activity" />
+        </activity>
+
+        <activity
+            android:name=".ListReportedUser_Activity"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Admin_Activity" />
+        </activity>
+        <activity
             android:name=".Data_change_Activity"
             android:exported="false">
             <meta-data

@@ -7,4 +7,15 @@
     android:background="@drawable/fondo"
     tools:context=".ListReportedUser_Activity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListUserReportes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:itemCount="10"
+        tools:listitem="@layout/single_items_user"
+        />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

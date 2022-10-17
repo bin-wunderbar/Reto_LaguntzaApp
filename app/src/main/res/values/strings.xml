@@ -17,4 +17,7 @@
     <string name="txurdinaga">Txurdinaga</string>
     <string name="randomFavor">Mudanzas</string>
     <string name="parrafo">Anunciate con nosotros</string>
+    <string name="gestionar_usuarios_laguntzaapp">Gestionar Usuarios LaguntzaApp</string>
+    <string name="ver_todos_los_usuarios">Ver todos los usuarios</string>
+    <string name="ver_usuarios_con_reportes">Ver usuarios con reportes</string>
 </resources>
