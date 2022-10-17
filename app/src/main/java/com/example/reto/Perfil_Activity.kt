@@ -36,6 +36,8 @@ class Perfil_Activity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         cargarperfil()
+        // llama a la activity publicidad cada minuto
+        activarPublicidad(this)
     }
 
 
