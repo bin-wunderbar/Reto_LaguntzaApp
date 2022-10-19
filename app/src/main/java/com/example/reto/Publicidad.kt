@@ -8,9 +8,10 @@ import com.example.reto.databinding.ActivityPublicidadBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.lang.Thread.sleep
 
 
-
+@Suppress("BlockingMethodInNonBlockingContext")
 class Publicidad : AppCompatActivity() {
 
     private lateinit var binding: ActivityPublicidadBinding
@@ -37,12 +38,12 @@ class Publicidad : AppCompatActivity() {
         lifecycleScope.launch {
             withContext(Dispatchers.IO) {
                 for (i in 5 downTo 1) {
-                    binding.txtContador.setText("Saltar publicidad en ${i}")
-                    Thread.sleep(1000)
+                    binding.txtContador.text = "Saltar publicidad en $i"
+                    sleep(1000)
                 }
             }
             binding.cardButtonSaltar.isEnabled = true
-            binding.txtContador.setText("")
+            binding.txtContador.text = ""
         }
     }
 

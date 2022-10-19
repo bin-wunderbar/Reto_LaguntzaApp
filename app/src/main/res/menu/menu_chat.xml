@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/cat"
-        android:title="chat">
-    </item>
-    <item
-        android:id="@+id/cat2"
-        android:title="hacer favor">
-    </item>
-    <item
-        android:id="@+id/cat3"
-        android:title="pedir favor">
-    </item>
-    <item
-        android:id="@+id/cat4"
-        android:title="home">
-    </item>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:icon="@drawable/ic_info"
+            android:id="@+id/cat"
+            android:title="chat">
+        </item>
+        <item
+            android:id="@+id/cat2"
+            android:title="hacer favor"
+            android:icon="@drawable/ic_list">
+        </item>
+        <item
+            android:id="@+id/cat3"
+            android:title="pedir favor"
+            android:icon="@drawable/ic_list">
+        </item>
+        <item
+            android:id="@+id/cat4"
+            android:title="home"
+            android:icon="@drawable/ic_home">
+        </item>
+    </group>
 </menu>

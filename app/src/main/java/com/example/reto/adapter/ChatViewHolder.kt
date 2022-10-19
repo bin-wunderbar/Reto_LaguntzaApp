@@ -16,8 +16,6 @@ class ChatViewHolder (view: View) : RecyclerView.ViewHolder(view) {
         binding.fechaTxt.text = chat.fecha
         binding.numeroMensaje.text = chat.numero.toString()
         Glide.with(binding.fotoimg.context).load(chat.photo).into(binding.fotoimg)
-        itemView.setOnClickListener{
-            Toast.makeText(binding.fotoimg.context, chat.usuario, Toast.LENGTH_SHORT).show()
-        }
+
     }
 }

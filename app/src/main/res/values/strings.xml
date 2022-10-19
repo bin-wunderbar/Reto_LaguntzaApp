@@ -20,4 +20,6 @@
     <string name="gestionar_usuarios_laguntzaapp">Gestionar Usuarios LaguntzaApp</string>
     <string name="ver_todos_los_usuarios">Ver todos los usuarios</string>
     <string name="ver_usuarios_con_reportes">Ver usuarios con reportes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

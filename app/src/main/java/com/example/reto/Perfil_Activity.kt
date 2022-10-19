@@ -5,9 +5,8 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.reto.databinding.ActivityPerfilBinding
-import com.google.firebase.firestore.FieldValue.delete
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.Source
+
 
 class Perfil_Activity : AppCompatActivity() {
     private lateinit var binding: ActivityPerfilBinding
@@ -44,7 +43,7 @@ class Perfil_Activity : AppCompatActivity() {
 
     fun cargarperfil(){
         val sharedPreferences: SharedPreferences = getSharedPreferences("Currentuser",0)
-        var currentuser = sharedPreferences.getString("CurrentUser","Usuario")?.toString()
+        var currentuser = sharedPreferences.getString("CurrentUser","Usuario")
         val db = FirebaseFirestore.getInstance()
         db.collection("Usuarios")
             .whereEqualTo("email","${currentuser}")
