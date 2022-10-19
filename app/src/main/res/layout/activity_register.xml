@@ -9,143 +9,148 @@
 
     <EditText
         android:id="@+id/textNombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="339dp"
+        android:layout_height="43dp"
+        android:background="@drawable/styletxt"
         android:ems="10"
         android:hint="Nombre"
+        android:padding="3dip"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textCorreoRegis" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
 
     <EditText
         android:id="@+id/textCorreoRegis"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="339dp"
+        android:layout_height="43dp"
+        android:background="@drawable/styletxt"
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
+        android:padding="3dip"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.321" />
 
     <EditText
         android:id="@+id/textApellidos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="339dp"
+        android:layout_height="43dp"
+        android:background="@drawable/styletxt"
         android:ems="10"
         android:hint="Apellidos"
+        android:padding="3dip"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textNombre" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.477" />
 
     <EditText
         android:id="@+id/textPasswordReg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="238dp"
+        android:layout_width="339dp"
+        android:layout_height="43dp"
+        android:background="@drawable/styletxt"
         android:ems="10"
         android:hint="Password"
+        android:padding="3dip"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.64" />
 
     <EditText
         android:id="@+id/textLocalidad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="339dp"
+        android:layout_height="43dp"
+        android:background="@drawable/styletxt"
         android:ems="10"
         android:hint="Localidad"
+        android:padding="3dip"
         android:inputType="textPersonName"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textApellidos" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.56" />
 
     <EditText
         android:id="@+id/textPassRegConfirmar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="339dp"
+        android:layout_height="43dp"
+        android:background="@drawable/styletxt"
+        android:padding="3dip"
+        android:textColor="@color/black"
         android:ems="10"
         android:hint="Confirmar Password"
+
         android:inputType="textPersonName"
+
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPasswordReg" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.721" />
 
     <Button
         android:id="@+id/buttonRegistrar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="44dp"
+        android:layout_width="314dp"
+        android:layout_height="45dp"
         android:background="@drawable/button_rounded"
         android:text="Registrarse"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.921" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="157dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="296dp"
-        app:layout_constraintBottom_toTopOf="@+id/textPasswordReg"
+        android:layout_height="143dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.045"
         app:srcCompat="@drawable/perifl" />
 
     <CheckBox
         android:id="@+id/terminos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="572dp"
         android:text="He leido y acepto"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintHorizontal_bias="0.059"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.808" />
 
     <TextView
         android:id="@+id/txtHoras"
-        android:layout_width="188dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="580dp"
-        android:layout_marginEnd="32dp"
+        android:layout_width="195dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="24dp"
         android:text="Terminos y Condiciones"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:textColor="@color/teal_700"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/terminos"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.81" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

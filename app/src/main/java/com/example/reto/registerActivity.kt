@@ -13,15 +13,21 @@ import com.google.firebase.firestore.Query
 
 class registerActivity : AppCompatActivity() {
 
-    var numuser = 0
+
     private lateinit var binding: ActivityRegisterBinding
+    var numuser = 0
+    var idusuario : Int = 1
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.buttonRegistrar.setOnClickListener(){
             userregister()
+
         }
 
 
@@ -34,8 +40,9 @@ class registerActivity : AppCompatActivity() {
             && binding.textLocalidad.text.isNotEmpty() && binding.textPasswordReg.text.isNotEmpty()&&
             binding.textPassRegConfirmar.text.isNotEmpty()){
 
-            var idusuario : Int = generariduser()
-            idusuario++
+
+            generariduser()
+
             println(idusuario)
             val nombre = binding.textNombre.text.toString()
             val apellidos = binding.textApellidos.text.toString()
@@ -132,15 +139,19 @@ class registerActivity : AppCompatActivity() {
                     cod = dato.get(0).toString()
 
                     println("preuba numero " + cod)
+                    idusuario = cod.toInt()
+
+
 
                 }
-                numuser = cod.toInt()
+                idusuario= idusuario+1
             }
             .addOnFailureListener(){
                 println("fallo")
 
             }
         return numuser
+
     }
     private fun showpalertcampos(){
         //alerta de campos vacios
@@ -190,3 +201,4 @@ class registerActivity : AppCompatActivity() {
         dialog.show()
     }
 }
+

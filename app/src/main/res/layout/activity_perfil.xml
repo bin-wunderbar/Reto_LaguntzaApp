@@ -84,7 +84,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="txtdescripcion"
-            android:textColor="@color/white" />
+            android:background="@color/white"
+            android:textColor="@color/black" />
     </FrameLayout>
 
     <TextView

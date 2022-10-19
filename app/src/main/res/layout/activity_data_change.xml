@@ -29,13 +29,15 @@
 
     <EditText
         android:id="@+id/txtpassAct"
-        android:layout_width="260dp"
-        android:layout_height="41dp"
+        android:layout_width="259dp"
+        android:layout_height="50dp"
         android:contentDescription="Contraseña actual"
         android:ems="10"
         android:hint="Contraseña actual"
         android:inputType="textPassword"
-        android:textColor="@color/white"
+        android:background="@drawable/styletxt"
+        android:padding="3dip"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.218"
@@ -51,7 +53,9 @@
         android:ems="10"
         android:hint="Nueva contraseña"
         android:inputType="textPassword"
-        android:textColor="@color/white"
+        android:background="@drawable/styletxt"
+        android:padding="3dip"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.21"
@@ -79,28 +83,32 @@
         android:layout_height="34dp"
         android:text="Cambiar ciudad:"
         android:textColor="@color/white"
+
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.475" />
 
     <EditText
         android:id="@+id/txtnuevaciudad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="259dp"
+        android:layout_height="50dp"
+
         android:ems="10"
         android:hint="Cambiar ciudad"
         android:inputType="textPersonName"
-        android:textColor="@color/white"
+        android:background="@drawable/styletxt"
+        android:padding="3dip"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintHorizontal_bias="0.217"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.574" />
+        app:layout_constraintVertical_bias="0.553" />
 
     <Button
         android:id="@+id/btncambiarciudad"
@@ -110,24 +118,24 @@
         android:text="Cambiar ciudad"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintHorizontal_bias="0.129"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.657" />
+        app:layout_constraintVertical_bias="0.645" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="187dp"
-        android:layout_height="33dp"
+        android:layout_width="210dp"
+        android:layout_height="34dp"
         android:text="Editar datos personales:"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintHorizontal_bias="0.164"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <TextView
         android:id="@+id/textView3"
@@ -137,15 +145,16 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.086" />
 
     <EditText
         android:id="@+id/txtdescripcion"
         android:layout_width="264dp"
         android:layout_height="169dp"
+
         android:ems="10"
         android:gravity="top|start"
         android:hint="Descripcion"
@@ -153,13 +162,15 @@
         android:lines="8"
         android:maxLines="10"
         android:text="Descripcion"
-        android:textColor="@color/white"
+        android:background="@drawable/styletxt"
+        android:padding="3dip"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.217"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.197" />
+        app:layout_constraintVertical_bias="0.145" />
 
     <Button
         android:id="@+id/btndescripcion"
@@ -169,9 +180,9 @@
         android:text="Actualizar descripcion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintHorizontal_bias="0.187"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.427" />
+        app:layout_constraintVertical_bias="0.391" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

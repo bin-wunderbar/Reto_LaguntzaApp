@@ -36,7 +36,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="12dp"
                 android:text="@string/usuario"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="24dp"
                 android:layout_marginStart="12dp"
                 card_view:layout_constraintStart_toEndOf="@id/fotoimg"
