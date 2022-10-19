@@ -24,8 +24,8 @@ class Publicidad : AppCompatActivity() {
 
         // on click cierra la activity actual
         binding.cardButtonSaltar.setOnClickListener {
+            permeterPublicidad()
             finish()
-
         }
     }
 

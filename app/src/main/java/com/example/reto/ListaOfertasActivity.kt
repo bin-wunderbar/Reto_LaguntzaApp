@@ -3,6 +3,7 @@ package com.example.reto
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -29,8 +30,7 @@ class ListaOfertasActivity : AppCompatActivity() {
             finish()
         }
 
-        // llama a la activity publicidad cada minuto
-        activarPublicidad(this)
+        // llama a la activity publicidad cada minuto activarPublicidad(this)
 
         // menu navigation desplegable
         cargarNavigationMenu()
@@ -42,6 +42,7 @@ class ListaOfertasActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         activarPublicidad(this)
+        Log.i("activarPublicidad", "onResume "+this.javaClass.simpleName)
     }
 
     private fun iniciarRecyclerView(){
