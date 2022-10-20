@@ -9,6 +9,7 @@
         <!-- Customize your theme here. -->
 
     </style>
+
     <style name="botones">
         <item name="android:textSize">15dp</item>
         <item name="android:textAlignment">center</item>
@@ -19,4 +20,13 @@
         <item name="backgroundColor">@color/white</item>
         <item name="android:textAlignment">center</item>
     </style>
+
+    <style name="Theme.Reto.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.Reto.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.Reto.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

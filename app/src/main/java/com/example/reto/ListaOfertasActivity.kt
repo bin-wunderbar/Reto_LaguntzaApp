@@ -22,7 +22,7 @@ class ListaOfertasActivity : AppCompatActivity() {
         binding = ActivityListaOfertasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // carga los datos obtenidos de viewholder
+   /*     // carga los datos obtenidos de viewholder
         iniciarRecyclerView()
 
         // button flotante provesional para navigar entre activitys
@@ -34,9 +34,10 @@ class ListaOfertasActivity : AppCompatActivity() {
 
         // menu navigation desplegable
         cargarNavigationMenu()
-
+*/
 
     }
+/*
 
     //implementar la seguiente funcion en cada activity para mostrar publi
     override fun onResume() {
@@ -74,6 +75,7 @@ class ListaOfertasActivity : AppCompatActivity() {
             true
         }
     }
+*/
 
 
 }

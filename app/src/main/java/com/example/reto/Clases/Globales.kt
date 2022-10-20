@@ -15,17 +15,13 @@ import kotlinx.coroutines.withContext
 var llamado: Boolean = false
 fun permeterPublicidad(){
     llamado = false
-    Log.i("activarPublicidad", "permeterPublicidad ")
-
 }
 // se le pasa una actividad donde espera cierto tiempo establishedy se lanza la actividad Publicidad
 fun activarPublicidad(actividad: AppCompatActivity) {
-    Log.i("activarPublicidad", "intento "+actividad.javaClass.simpleName)
 
     if(!llamado){
         llamado =true
 
-        Log.i("activarPublicidad", "hilo "+actividad.javaClass.simpleName)
         actividad.lifecycleScope.launch {
             withContext(Dispatchers.IO) {
                 // comprueba si la actividad esta a la vista se inicia el contador

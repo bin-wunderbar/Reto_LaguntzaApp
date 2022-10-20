@@ -19,7 +19,7 @@ class ListaChatActivity : AppCompatActivity() {
         binding = ActivityListaChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
+  /*      toggle = ActionBarDrawerToggle(this, binding.drawerLayout, R.string.open, R.string.close)
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -34,7 +34,7 @@ class ListaChatActivity : AppCompatActivity() {
             }
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             true
-        }
+        }*/
 
         // carga los datos obtenidos de viewholder
         //iniciarRecyclerView()
@@ -56,22 +56,11 @@ class ListaChatActivity : AppCompatActivity() {
 
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (toggle.onOptionsItemSelected(item)) {
-            return true
-        }
-        return super.onOptionsItemSelected(item)
-    }
+
     private fun iniciarRecyclerView(){
         binding.rvListChat.adapter = RvAdapterChat(ChatProvider.listachat)
     }
 
-    //implementar la seguiente funcion en cada activity para mostrar publi
-   /* override fun onResume() {
-        super.onResume()
-        // llama a la activity publicidad cada minuto
-        activarPublicidad(this)
-    }*/
 
 }
 

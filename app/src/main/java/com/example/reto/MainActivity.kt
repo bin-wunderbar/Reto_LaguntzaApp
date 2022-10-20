@@ -4,10 +4,10 @@ package com.example.reto
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.reto.Clases.OptionsMenuActivity
 import com.example.reto.databinding.ActivityMainBinding
+import com.example.reto.ui.chat.ChatFragment
 
 
 class MainActivity :  OptionsMenuActivity() {
@@ -23,7 +23,7 @@ class MainActivity :  OptionsMenuActivity() {
         super.onDestroy()
         finish()
     }
-
+/*
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
 
         R.id.cat -> {
@@ -49,7 +49,7 @@ class MainActivity :  OptionsMenuActivity() {
             // Invoke the superclass to handle it.
             super.onOptionsItemSelected(item)
         }
-    }
+    }*/
 
     private fun replaceFragment(fragmento: Fragment, title: String) {
         val fragmentManager = supportFragmentManager

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/ofertasid"
-    tools:context=".OfertasFragment">
+    tools:context=".ui.ofertas.OfertasFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvOfertas"

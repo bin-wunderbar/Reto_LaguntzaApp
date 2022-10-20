@@ -14,8 +14,6 @@
         android:id="@+id/navig"
         android:layout_width="90dp"
         android:layout_gravity="start"
-        app:headerLayout="@layout/nav"
-        app:menu="@menu/menu_chat"
         android:fitsSystemWindows="true"/>
 
     <!-- Lista de chat-->

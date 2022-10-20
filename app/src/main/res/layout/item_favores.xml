@@ -70,7 +70,7 @@
                 android:layout_height="24dp"
                 android:layout_marginTop="4dp"
                 card_view:layout_constraintTop_toBottomOf="@id/descriptionTxt"
-                card_view:srcCompat="@drawable/ic_location"
+                card_view:srcCompat="@drawable/ic_ubic"
                 tools:layout_editor_absoluteX="0dp"
                 tools:ignore="MissingConstraints" />
 
@@ -78,7 +78,7 @@
                 android:id="@+id/imageTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                card_view:srcCompat="@drawable/ic_time"
+                card_view:srcCompat="@drawable/ic_hora"
                 card_view:layout_constraintBottom_toBottomOf="parent"
                 tools:ignore="MissingConstraints" />
 
