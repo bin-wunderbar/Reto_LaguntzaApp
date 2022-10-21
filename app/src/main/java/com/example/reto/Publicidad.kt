@@ -3,6 +3,7 @@ package com.example.reto
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.example.reto.databinding.ActivityPublicidadBinding
 import kotlinx.coroutines.Dispatchers
@@ -11,7 +12,6 @@ import kotlinx.coroutines.withContext
 import java.lang.Thread.sleep
 
 
-@Suppress("BlockingMethodInNonBlockingContext")
 class Publicidad : AppCompatActivity() {
 
     private lateinit var binding: ActivityPublicidadBinding
@@ -20,30 +20,26 @@ class Publicidad : AppCompatActivity() {
         binding = ActivityPublicidadBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // button saltar  desactivado por defecto
-        binding.cardButtonSaltar.isEnabled = false
+        binding.btnsalir.isVisible= false
 
         // on click cierra la activity actual
-        binding.cardButtonSaltar.setOnClickListener {
+        binding.btnsalir.setOnClickListener {
             permeterPublicidad()
             finish()
         }
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onResume() {
         super.onResume()
         // desactivar button saltar por defecto
-        binding.cardButtonSaltar.isEnabled = false
-
+        binding.btnsalir.isVisible= false
         lifecycleScope.launch {
             withContext(Dispatchers.IO) {
-                for (i in 5 downTo 1) {
-                    binding.txtContador.text = "Saltar publicidad en $i"
+                for (i in 3 downTo 1) {
                     sleep(1000)
                 }
             }
-            binding.cardButtonSaltar.isEnabled = true
-            binding.txtContador.text = ""
+            binding.btnsalir.isVisible= true
         }
     }
 

@@ -66,9 +66,6 @@ class Data_change_Activity : AppCompatActivity() {
                         avisos("error","Error al cambiar de contraseña")
                     }
                 }
-
-
-
             }else {
                 avisos("error","Error Campos vacios")
             }

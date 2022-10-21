@@ -1,5 +1,6 @@
 package com.example.reto
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -80,50 +81,30 @@ class registerActivity : AppCompatActivity() {
                         .createUserWithEmailAndPassword(binding.textCorreoRegis.text.toString(),binding.textPasswordReg.text.toString())
                         .addOnCompleteListener(){
                             if(it.isSuccessful){
-                                showpalertregistrobien()
 
                                 db.collection("Usuarios")
                                     .document(idusuario.toString())
                                     .set(datos)
-                                    .addOnSuccessListener { resultado ->
+                                    .addOnSuccessListener {
                                         //mensaje exito
-                                        showpalertregistrobien()
+                                        showMessage("Registrado con exito")
+                                        // lleva a la actividad login
+                                        startActivity(Intent(this, loginActivity::class.java))
                                     }
-                                    .addOnFailureListener{ Exception ->
+                                    .addOnFailureListener{
                                         println("error bbdd")
-                                        showpalertregistroerror()
+                                        showMessage("Error al registrar, intenta una contraseña fuerte")
                                     }
 
-
-                            }
-                            else{
-                                println("error autenticacion")
-                                showpalertregistroerror()
-                            }
-
+                            }else showMessage("Error al registrar, intenta una contraseña fuerte")
                         }
-
-                }else{
-                    showpalertterminos()
-
-                }
-
-            }else  {
-                //mensaje de error por contraseña no coincide
-                showpalerterrorpass()
-            }
-        }
-        else {
-            //mensaje de campos vacios
-            showpalertcampos()
-        }
-
-
-
-
+                }else showMessage("Por favor acepta los terminos y condiciones de uso")
+            }else showMessage("Error las contraseñas no cinciden")
+        }else showMessage("Por favor rellene todos los campos")
     }
-    private fun generariduser(): Int {
-        var cod :String=""
+
+    private fun generariduser() {
+        var cod :String
         val db = FirebaseFirestore.getInstance()
         db.collection("Usuarios")
             //ordenar por desceniente limite de 1 haciendo q solo coja el mas grande
@@ -141,64 +122,22 @@ class registerActivity : AppCompatActivity() {
                     println("preuba numero " + cod)
                     idusuario = cod.toInt()
 
-
-
                 }
                 idusuario= idusuario+1
             }
             .addOnFailureListener(){
                 println("fallo")
-
             }
-        return numuser
-
     }
-    private fun showpalertcampos(){
+    private fun showMessage(mensaje: String){
         //alerta de campos vacios
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
-        builder.setMessage("Te falta algun campo por rellenar")
+        builder.setMessage(mensaje)
         builder.setPositiveButton("Aceptar",null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
-    private fun showpalertregistroerror(){
-        //alerta de error de registro
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage("Error al registrar, la contraseña deve inclur mayus y minus y numeros")
-        builder.setPositiveButton("Aceptar",null)
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
-    }
-    private fun showpalertregistrobien(){
-        //alerta de exito de registro
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("registrado")
-        builder.setMessage("Registrado con exito")
-        builder.setPositiveButton("Aceptar",null)
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
 
-
-    }
-    private fun showpalerterrorpass(){
-        //alerta de contraseña no coincide
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("error")
-        builder.setMessage("Error las contraseñas no cinciden")
-        builder.setPositiveButton("Aceptar",null)
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
-    }
-    private fun showpalertterminos(){
-        //alerta de terminso y coniciones
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage("Por favor acepta lso terminos y condiciones de uso")
-        builder.setPositiveButton("Aceptar",null)
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
-    }
 }
 

@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import com.example.reto.databinding.ActivityLoginBinding
-import com.example.reto.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class loginActivity : AppCompatActivity() {
@@ -40,22 +39,16 @@ class loginActivity : AppCompatActivity() {
                 if(it.isSuccessful){
                     //login exitoso
                     loginexitoso(email)
-
                 }
                 else {
                     //login fallido
                     errorlogin()
                 }
-
-
             }
-
-
         }
         else{
             //campos vacios
             camposvacios()
-
         }
 
 
@@ -77,8 +70,9 @@ class loginActivity : AppCompatActivity() {
             startActivity(Intent(this, Admin_Activity::class.java))
         }
         else{
+            // usuario normal
             currentuser()
-            startActivity(Intent(this, Perfil_Activity::class.java))
+            startActivity(Intent(this, Prencipal::class.java))
         }
 
     }

@@ -2,13 +2,14 @@ package com.example.reto
 
 import android.os.Bundle
 import com.google.android.material.navigation.NavigationView
+
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.appcompat.app.AppCompatActivity
 import com.example.reto.databinding.ActivityPrencipalBinding
 
 class Prencipal : AppCompatActivity() {
@@ -24,10 +25,7 @@ class Prencipal : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarPrencipal.toolbar)
 
-//        binding.appBarPrencipal.fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show()
-//        }
+
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_prencipal)
@@ -40,6 +38,15 @@ class Prencipal : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // llamar a publicidad
+        activarPublicidad(this)
     }
 
 

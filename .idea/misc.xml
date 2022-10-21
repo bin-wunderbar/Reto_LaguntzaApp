@@ -3,17 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/drawable/borderboton.xml" value="0.1695" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/drawable/media.xml" value="0.1045" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/drawable/publi_background.xml" value="0.2255" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/activity_admin.xml" value="0.18426678067550234" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/activity_all_user_.xml" value="0.18426678067550234" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/activity_data_change.xml" value="0.18426678067550234" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/activity_lista_chat.xml" value="0.1" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/activity_lista_ofertas.xml" value="0.25" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/activity_main.xml" value="0.16" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/activity_perfil.xml" value="0.18426678067550234" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/activity_prueba.xml" value="0.18426678067550234" />
-        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/activity_publicidad.xml" value="0.1" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/activity_publicidad.xml" value="0.22" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/content_prencipal.xml" value="0.18426678067550234" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_chat.xml" value="0.14" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_ofertas.xml" value="0.1" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_prueba.xml" value="0.18426678067550234" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_scrolling.xml" value="0.18426678067550234" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/item_chat.xml" value="0.22447916666666667" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/item_favores.xml" value="0.33" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/nav.xml" value="0.168359375" />

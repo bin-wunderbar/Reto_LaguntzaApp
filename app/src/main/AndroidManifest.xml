@@ -32,9 +32,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+
         <activity
             android:name=".Perfil_Activity"
             android:exported="false">
@@ -71,14 +69,9 @@
                 android:value=".Perfil_Activity" />
         </activity>
         <activity
-            android:name=".ListaOfertasActivity"
-            android:exported="false" />
-        <activity
             android:name=".Publicidad"
             android:exported="false" />
-        <activity
-            android:name=".ListaChatActivity"
-            android:exported="false" />
+
         <activity
             android:name=".registerActivity"
             android:exported="false">
