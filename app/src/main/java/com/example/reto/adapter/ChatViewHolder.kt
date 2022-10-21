@@ -9,8 +9,8 @@ import com.example.reto.modelo.UsuariosChat
 
 class ChatViewHolder (view: View) : RecyclerView.ViewHolder(view) {
     val binding = ItemChatBinding.bind(view)
-    fun bind(chat: UsuariosChat) {
 
+    fun bind(chat: UsuariosChat) {
         binding.usuarioTxt.text = chat.usuario
         binding.lastChatTxt.text = chat.mensaje
         binding.fechaTxt.text = chat.fecha

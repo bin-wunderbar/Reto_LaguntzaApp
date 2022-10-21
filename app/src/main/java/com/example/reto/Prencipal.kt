@@ -46,7 +46,7 @@ class Prencipal : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         // llamar a publicidad
-        activarPublicidad(this)
+        //activarPublicidad(this)
     }
 
 

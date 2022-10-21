@@ -8,7 +8,7 @@ import com.example.reto.R
 import com.example.reto.databinding.ItemChatBinding
 import com.example.reto.modelo.UsuariosChat
 
-class RvAdapterChat(var listaChat: List<UsuariosChat>) :RecyclerView.Adapter<ChatViewHolder>(){
+class RvAdapterChat(var listaChat: List<UsuariosChat>,private val listener: (UsuariosChat)->Unit) :RecyclerView.Adapter<ChatViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatViewHolder {
         val view= LayoutInflater
@@ -20,7 +20,11 @@ class RvAdapterChat(var listaChat: List<UsuariosChat>) :RecyclerView.Adapter<Cha
     }
 
     override fun onBindViewHolder(holder: ChatViewHolder, position: Int) {
-        holder.bind(listaChat[position])
+        val chat=listaChat[position]
+        holder.bind(chat)
+        holder.itemView.setOnClickListener {
+            listener(chat)
+        }
     }
 
     override fun getItemCount(): Int = listaChat.size

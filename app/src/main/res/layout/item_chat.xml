@@ -78,7 +78,6 @@
                 tools:ignore="MissingConstraints"
                 android:textAlignment="center"/>
 
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

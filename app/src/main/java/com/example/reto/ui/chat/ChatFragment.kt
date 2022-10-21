@@ -1,27 +1,25 @@
 package com.example.reto.ui.chat
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.reto.DetailsChatFragment
 import com.example.reto.R
 import com.example.reto.adapter.RvAdapterChat
 import com.example.reto.modelo.ChatProvider
+import com.example.reto.modelo.UsuariosChat
 
 
-class ChatFragment : Fragment() {
+class ChatFragment : Fragment(R.layout.fragment_chat) {
 
    private lateinit var adapter: RvAdapterChat
    private lateinit var recyclerview: RecyclerView
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,8 +35,24 @@ class ChatFragment : Fragment() {
         recyclerview = view.findViewById(R.id.rvListChat)
         recyclerview.layoutManager = layoutManager
         recyclerview.setHasFixedSize(true)
-        adapter = RvAdapterChat(ChatProvider.listachat)
+        adapter = RvAdapterChat(ChatProvider.listachat){
+            navegar(it)
+        }
         recyclerview.adapter = adapter
+
+
+    }
+
+    //DetailFragment.create(movie)
+    @SuppressLint("ResourceType")
+    private fun navegar(chat: UsuariosChat) {
+        //val detail= DetailFragment.create(movie)
+        parentFragmentManager
+            .beginTransaction()
+            .replace(R.id.chatid, DetailsChatFragment.create(chat))
+            .addToBackStack(true.toString())
+            .setReorderingAllowed(null == true)
+            .commit()
     }
 
 }
