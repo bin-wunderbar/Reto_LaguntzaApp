@@ -45,4 +45,5 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
         findNavController().navigate(action)
     }
 
+
 }

@@ -20,7 +20,7 @@ class Publicidad : AppCompatActivity() {
         binding = ActivityPublicidadBinding.inflate(layoutInflater)
         setContentView(binding.root)
         // button saltar  desactivado por defecto
-        binding.btnsalir.isVisible= false
+        habilitarButton(false)
 
         // on click cierra la activity actual
         binding.btnsalir.setOnClickListener {
@@ -32,15 +32,19 @@ class Publicidad : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         // desactivar button saltar por defecto
-        binding.btnsalir.isVisible= false
+        habilitarButton(false)
         lifecycleScope.launch {
             withContext(Dispatchers.IO) {
                 for (i in 3 downTo 1) {
                     sleep(1000)
                 }
             }
-            binding.btnsalir.isVisible= true
+            habilitarButton(true)
         }
+    }
+
+    fun habilitarButton(estado: Boolean) {
+        binding.btnsalir.isVisible= estado
     }
 
 }

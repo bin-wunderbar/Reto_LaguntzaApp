@@ -46,7 +46,7 @@ class Perfil_Activity : AppCompatActivity() {
         var currentuser = sharedPreferences.getString("CurrentUser","Usuario")
         val db = FirebaseFirestore.getInstance()
         db.collection("Usuarios")
-            .whereEqualTo("email","${currentuser}")
+            .whereEqualTo("email","$currentuser")
             .get()
             .addOnSuccessListener { resultado ->
                 val usuario = resultado.documents.get(0)

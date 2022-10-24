@@ -1,5 +1,6 @@
 package com.example.reto
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import com.google.android.material.navigation.NavigationView
 
@@ -11,6 +12,8 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.reto.databinding.ActivityPrencipalBinding
+import com.google.firebase.firestore.FirebaseFirestore
+import io.grpc.okhttp.internal.framed.Header
 
 class Prencipal : AppCompatActivity() {
 
@@ -20,11 +23,11 @@ class Prencipal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         binding = ActivityPrencipalBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarPrencipal.toolbar)
-
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
@@ -55,5 +58,22 @@ class Prencipal : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-
+    fun cargarperfil(){
+        val sharedPreferences: SharedPreferences = getSharedPreferences("Currentuser",0)
+        val currentuser = sharedPreferences.getString("CurrentUser","Usuario")
+        val db = FirebaseFirestore.getInstance()
+        db.collection("Usuarios")
+            .whereEqualTo("email","$currentuser")
+            .get()
+            .addOnSuccessListener { resultado ->
+                val usuario = resultado.documents.get(0)
+                val nombre = usuario.get("nombre")
+                val apellidos = usuario.get("apellidos")
+                val saldo = usuario.get("saldo")
+                val descripcion = usuario.get("descripcion")
+                val localidad = usuario.get("localidad")
+                val id = usuario.get("id")
+                binding.appBarPrencipal.toolbar.title = localidad.toString()
+            }
+    }
 }
