@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="364dp"
+        android:layout_marginTop="400dp"
         android:text="Lorem ipsum dolor sit amet, consectetur adipiscing"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -81,6 +81,17 @@
         android:layout_marginTop="328dp"
         android:text="  Bilbao"
         app:drawableLeftCompat="@drawable/ic_ciudad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSaldo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="364dp"
+        android:text=""
+        app:drawableLeftCompat="@drawable/ic_wallet"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

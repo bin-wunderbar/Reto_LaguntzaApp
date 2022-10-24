@@ -17,6 +17,7 @@ class OfertasViewHolder (view: View) : RecyclerView.ViewHolder(view) {
 
         // al dar click sobre la carta muestra mensaje con nombre de la carta
         itemView.setOnClickListener{
+
             Toast.makeText(binding.nameTxt.context, oferta.name, Toast.LENGTH_SHORT).show()
         }
     }

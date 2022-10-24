@@ -29,8 +29,7 @@ class Prencipal : AppCompatActivity() {
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_prencipal)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
+
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home, R.id.chatFragment, R.id.ofertasFragment
@@ -55,4 +54,6 @@ class Prencipal : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_prencipal)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+
 }

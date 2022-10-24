@@ -7,44 +7,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
+import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.reto.databinding.FragmentDetailsChatBinding
 import com.example.reto.modelo.UsuariosChat
 
 
-class DetailsChatFragment : Fragment() {
-    private var fragmentDetailsChatBinding: FragmentDetailsChatBinding? = null
+class DetailsChatFragment : Fragment(R.layout.fragment_details_chat) {
+    private lateinit var binding: FragmentDetailsChatBinding
+    private val args by navArgs<DetailsChatFragmentArgs>()
 
-
-    companion object{
-        const val EXTRA_USER ="Detail"
-        fun create(chat: UsuariosChat): DetailsChatFragment {
-            val fragment = DetailsChatFragment()
-            fragment.arguments = bundleOf(EXTRA_USER to chat)
-            return fragment
-        }
-
-
-    }
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_details_chat, container, false)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding = FragmentDetailsChatBinding.bind(view)
+        binding.usuariotxt.text = args.chatObject.usuario
+        Glide.with(binding.fotoimg.context).load(args.chatObject.photo).into(binding.fotoimg)
 
-        val chat = arguments?.getParcelable<UsuariosChat>(EXTRA_USER)
-        if(chat != null){
-            val binding = FragmentDetailsChatBinding.bind(view)
-            fragmentDetailsChatBinding = binding
-            Glide.with(binding.fotoimg).load(chat.photo).into(binding.fotoimg)
-            binding.usuariotxt.text = chat.usuario
-
-        }
     }
 
 

@@ -58,7 +58,7 @@ class loginActivity : AppCompatActivity() {
         //alerta de usuario incorrecto
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
-        builder.setMessage("Error Usuario o contraseña incorrectos")
+        builder.setMessage("Usuario o contraseña incorrectos")
         builder.setPositiveButton("Aceptar",null)
         val dialog: AlertDialog = builder.create()
         dialog.show()

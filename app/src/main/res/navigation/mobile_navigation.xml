@@ -3,19 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/nav_home">
 
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.reto.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_chatFragment"
+            app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_ofertasFragment"
+            app:destination="@id/ofertasFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_loginActivity2"
+            app:destination="@id/loginActivity" />
+    </fragment>
 
     <fragment
         android:id="@+id/chatFragment"
         android:name="com.example.reto.ui.chat.ChatFragment"
         android:label="Chat"
-        tools:layout="@layout/fragment_chat" />
+        tools:layout="@layout/fragment_chat" >
+        <action
+            android:id="@+id/action_chatFragment_to_detailsChatFragment"
+            app:destination="@id/detailsChatFragment" />
+    </fragment>
     <fragment
         android:id="@+id/ofertasFragment"
         android:name="com.example.reto.ui.ofertas.OfertasFragment"
@@ -26,4 +40,16 @@
         android:name="com.example.reto.loginActivity"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
+    <fragment
+        android:id="@+id/detailsChatFragment"
+        android:name="com.example.reto.DetailsChatFragment"
+        android:label="fragment_details_chat"
+        tools:layout="@layout/fragment_details_chat" >
+        <action
+            android:id="@+id/action_detailsChatFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+        <argument
+            android:name="chatObject"
+            app:argType="com.example.reto.modelo.UsuariosChat" />
+    </fragment>
 </navigation>

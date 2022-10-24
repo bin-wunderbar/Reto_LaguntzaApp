@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reto.DetailsChatFragment
+import com.example.reto.DetailsChatFragmentDirections
 import com.example.reto.R
 import com.example.reto.adapter.RvAdapterChat
 import com.example.reto.modelo.ChatProvider
@@ -21,10 +23,7 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
    private lateinit var recyclerview: RecyclerView
 
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_chat, container, false)
     }
@@ -36,23 +35,14 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
         recyclerview.layoutManager = layoutManager
         recyclerview.setHasFixedSize(true)
         adapter = RvAdapterChat(ChatProvider.listachat){
-            navegar(it)
+            onChatClick(it)
         }
         recyclerview.adapter = adapter
-
-
     }
 
-    //DetailFragment.create(movie)
-    @SuppressLint("ResourceType")
-    private fun navegar(chat: UsuariosChat) {
-        //val detail= DetailFragment.create(movie)
-        parentFragmentManager
-            .beginTransaction()
-            .replace(R.id.chatid, DetailsChatFragment.create(chat))
-            .addToBackStack(true.toString())
-            .setReorderingAllowed(null == true)
-            .commit()
+    fun onChatClick(chat: UsuariosChat){
+        val action = ChatFragmentDirections.actionChatFragmentToDetailsChatFragment(chat)
+        findNavController().navigate(action)
     }
 
 }

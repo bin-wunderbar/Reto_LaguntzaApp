@@ -24,7 +24,7 @@
                 android:id="@+id/fotoimg"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/perifl"
+                tools:background="@drawable/perifl"
                 card_view:layout_constraintTop_toTopOf="parent"
                 card_view:layout_constraintStart_toStartOf="parent"
                 tools:ignore="MissingConstraints" />

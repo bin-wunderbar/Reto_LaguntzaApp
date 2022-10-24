@@ -18,9 +18,8 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".Prencipal"
+            android:name=".loginActivity"
             android:exported="true"
-            android:label="@string/title_activity_prencipal"
             android:theme="@style/Theme.Reto.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -80,8 +79,9 @@
                 android:value=".loginActivity" />
         </activity>
         <activity
-            android:name=".loginActivity"
-            android:exported="false">
+            android:name=".Prencipal"
+            android:exported="false"
+            android:theme="@style/Theme.Reto.NoActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
