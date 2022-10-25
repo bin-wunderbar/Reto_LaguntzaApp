@@ -2,19 +2,23 @@ package com.example.reto.ui.home
 
 
 
-import android.content.ContentValues.TAG
-import android.content.Context
+
+
+import android.os.Build
 import android.os.Bundle
-import android.util.Log
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
+
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.reto.Clases.RetoApplication.Companion.prefs
 import com.example.reto.databinding.FragmentHomeBinding
+import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
+import java.text.SimpleDateFormat
+
 
 
 class HomeFragment : Fragment() {
@@ -22,6 +26,8 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
 
     private val binding get() = _binding!!
+    private lateinit var email: String
+    private lateinit var id : String
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
@@ -33,10 +39,11 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+       email = prefs.getEmail()
        cargarperfil()
         binding.btnEdit.setOnClickListener {
             comprobarEmail()
-            val action = HomeFragmentDirections.actionNavHomeToEditPerfilFragment("pasarleUnEmail.com")
+            val action = HomeFragmentDirections.actionNavHomeToEditPerfilFragment(id)
             findNavController().navigate(action)
         }
 
@@ -53,8 +60,14 @@ class HomeFragment : Fragment() {
        println(email)
     }
 
+
     fun cargarperfil() {
-        val email = prefs.getEmail()
+
+        /*
+          val simpleDate = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+          val currentDate = simpleDate.format(Date())
+        }*/
+
         val db = FirebaseFirestore.getInstance()
         db.collection("Usuarios")
             .whereEqualTo("email", email)
@@ -66,12 +79,16 @@ class HomeFragment : Fragment() {
                     val saldo = usuario.get("saldo")
                     val descripcion = usuario.get("description")
                     val localidad = usuario.get("localidad")
-                    val fecha = usuario.get("fecha")
+                    id    = usuario.get("id").toString()
+                    val fecha= usuario.get("fecha") as Timestamp
+                    val fechaActual= fecha.toDate()
+                    val simpleDate = SimpleDateFormat("MMM, yyyy")
+                    val currentDate = simpleDate.format(fechaActual)
                     binding.txtCiudad.setText("${localidad}")
                     binding.txtSaldo.setText("${saldo} H")
                     binding.txtUsuario.setText("${nombre}")
                     binding.txtDescripcion.setText("${descripcion}")
-                    binding.txtFichaRegistro.setText("${fecha.toString()}") //
+                    binding.txtFichaRegistro.text = ("Se unió en ${currentDate}")
                 }
 
             }
