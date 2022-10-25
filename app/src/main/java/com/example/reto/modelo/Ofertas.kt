@@ -1,5 +1,9 @@
 package com.example.reto.modelo
 
+import android.os.Parcelable
+
+
+
 /*
 * clase Ofertas de tipo datos, contine las propiedades:
 * - name: nombre de oferta en chat, tipo String
@@ -8,10 +12,12 @@ package com.example.reto.modelo
 * - caducidad: de tipo int indica cuando caduda la oferta
 * - photo: de tipo String de momento no se le da uso, para futuras actualizaciones
 * */
+@kotlinx.parcelize.Parcelize
 data class Ofertas(
-    val name: String,
-    val description: String,
-    val ubicacion: String,
-    val caducidad: Int,
-    val photo :String
-    )
+    val caducidad: String? = null,
+    val name: String? = null,
+    val descripcion: String? = null,
+    val ubicacion: String? = null,
+): Parcelable
+
+

@@ -22,6 +22,15 @@
         <action
             android:id="@+id/action_nav_home_to_loginActivity"
             app:destination="@id/loginActivity"/>
+        <action
+            android:id="@+id/action_nav_home_to_ejemploFragment"
+            app:destination="@id/Ejemplo" />
+        <action
+            android:id="@+id/action_nav_home_to_ejemplo"
+            app:destination="@id/Ejemplo" />
+        <action
+            android:id="@+id/action_nav_home_to_loginActivity2"
+            app:destination="@id/loginActivity" />
     </fragment>
 
     <fragment
@@ -38,15 +47,11 @@
         android:name="com.example.reto.ui.ofertas.OfertasFragment"
         android:label="Ofertas"
         tools:layout="@layout/fragment_ofertas" />
-    <activity
-        android:id="@+id/loginActivity"
-        android:name="com.example.reto.loginActivity"
-        android:label="activity_login"
-        tools:layout="@layout/activity_login" />
+
     <fragment
         android:id="@+id/detailsChatFragment"
         android:name="com.example.reto.DetailsChatFragment"
-        android:label="fragment_details_chat"
+        android:label="Chat"
         tools:layout="@layout/fragment_details_chat">
         <action
             android:id="@+id/action_detailsChatFragment_to_chatFragment"
@@ -58,10 +63,33 @@
     <fragment
         android:id="@+id/editPerfilFragment"
         android:name="com.example.reto.EditPerfilFragment"
-        android:label="fragment_edit_perfil"
+        android:label="Editar Perfil"
         tools:layout="@layout/fragment_edit_perfil">
         <argument
             android:name="email"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/Ejemplo"
+        android:name="com.example.reto.FavoresFragment"
+        android:label="Favores"
+        tools:layout="@layout/fragment_favores" >
+        <action
+            android:id="@+id/action_Ejemplo_to_addDemandaFragment"
+            app:destination="@id/addDemandaFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.reto.loginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <fragment
+        android:id="@+id/addDemandaFragment"
+        android:name="com.example.reto.AddDemandaFragment"
+        android:label="Añadir Favor"
+        tools:layout="@layout/fragment_add_demanda" >
+        <action
+            android:id="@+id/action_addDemandaFragment_to_Ejemplo"
+            app:destination="@id/Ejemplo" />
     </fragment>
 </navigation>

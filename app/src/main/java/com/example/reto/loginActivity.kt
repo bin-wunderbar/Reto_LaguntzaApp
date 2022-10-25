@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
+import com.example.reto.Clases.RetoApplication.Companion.prefs
 import com.example.reto.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -71,6 +72,7 @@ class loginActivity : AppCompatActivity() {
         }
         else{
             // usuario normal
+            prefs.saveEmail(email)
             currentuser()
             startActivity(Intent(this, Prencipal::class.java))
         }

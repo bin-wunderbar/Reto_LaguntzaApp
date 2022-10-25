@@ -5,7 +5,6 @@ class Users(
     val apellido :String,
     val imagen :String,
     val reportes :Int = 0
-) {
+)
 
 
-}

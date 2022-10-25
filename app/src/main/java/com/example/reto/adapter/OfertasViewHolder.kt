@@ -11,7 +11,7 @@ class OfertasViewHolder (view: View) : RecyclerView.ViewHolder(view) {
     fun bind(oferta: Ofertas) {
 
         binding.nameTxt.text = oferta.name
-        binding.descriptionTxt.text = oferta.description
+        binding.descriptionTxt.text = oferta.descripcion
         binding.ubicacionTxt.text = oferta.ubicacion
         binding.caducidadTxt.text = oferta.caducidad.toString()
 

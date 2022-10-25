@@ -15,12 +15,16 @@ import com.example.reto.R
 import com.example.reto.adapter.RvAdapterChat
 import com.example.reto.modelo.ChatProvider
 import com.example.reto.modelo.UsuariosChat
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.auth.User
+import com.google.firebase.ktx.Firebase
 
 
 class ChatFragment : Fragment(R.layout.fragment_chat) {
 
    private lateinit var adapter: RvAdapterChat
    private lateinit var recyclerview: RecyclerView
+   lateinit var Usuarios: ArrayList<UsuariosChat>
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,): View? {
@@ -34,13 +38,28 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
         recyclerview = view.findViewById(R.id.rvListChat)
         recyclerview.layoutManager = layoutManager
         recyclerview.setHasFixedSize(true)
-        adapter = RvAdapterChat(ChatProvider.listachat){
-            onChatClick(it)
-        }
-        recyclerview.adapter = adapter
+        Usuarios = arrayListOf()
+
+        val db: FirebaseFirestore
+        db = FirebaseFirestore.getInstance()
+        db.collection("Usuarios")
+            .get().addOnSuccessListener{
+                if (!it.isEmpty) {
+                    for (data in it.documents) {
+                        val user: UsuariosChat? = data.toObject(UsuariosChat::class.java)
+                        if(user != null) {
+                            Usuarios.add(user)
+                        }
+                    }
+                    adapter = RvAdapterChat(Usuarios){
+                        onChatClick(it)
+                    }
+                    recyclerview.adapter = adapter
+                }
+            }
     }
 
-    fun onChatClick(chat: UsuariosChat){
+    private fun onChatClick(chat: UsuariosChat){
         val action = ChatFragmentDirections.actionChatFragmentToDetailsChatFragment(chat)
         findNavController().navigate(action)
     }

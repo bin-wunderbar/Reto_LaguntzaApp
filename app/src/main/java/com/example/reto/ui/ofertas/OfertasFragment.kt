@@ -9,14 +9,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reto.R
 import com.example.reto.adapter.RvAdapterOfertas
-import com.example.reto.modelo.OfertasProvider
+import com.example.reto.modelo.Ofertas
+
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class OfertasFragment : Fragment() {
 
    private lateinit var adapter: RvAdapterOfertas
    private lateinit var recyclerview: RecyclerView
-
+   lateinit var OfertasList: ArrayList<Ofertas>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +35,24 @@ class OfertasFragment : Fragment() {
         recyclerview = view.findViewById(R.id.rvOfertas)
         recyclerview.layoutManager = layoutManager
         recyclerview.setHasFixedSize(true)
-        adapter = RvAdapterOfertas(OfertasProvider.listaOfertas)
-        recyclerview.adapter = adapter
+        OfertasList = arrayListOf()
+
+        val db = FirebaseFirestore.getInstance()
+
+        db.collection("favores")
+            .get()
+            .addOnSuccessListener {
+                if (!it.isEmpty) {
+                    for (data in it.documents) {
+                        val ofertas: Ofertas? = data.toObject(Ofertas::class.java)
+                        if (ofertas != null) {
+                            OfertasList.add(ofertas)
+                        }
+                    }
+                    adapter = RvAdapterOfertas(OfertasList)
+                    recyclerview.adapter = adapter
+                }
+            }
     }
 
 

@@ -4,6 +4,7 @@ package com.example.reto.modelo
 * clase estatica tipo list para
 *
 * */
+/*
 
 class OfertasProvider {
     companion object{
@@ -43,4 +44,4 @@ class OfertasProvider {
             ),
         )
     }
-}
+}*/
