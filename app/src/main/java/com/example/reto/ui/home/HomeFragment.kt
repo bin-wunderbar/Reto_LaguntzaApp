@@ -64,12 +64,14 @@ class HomeFragment : Fragment() {
                     val usuario = it.documents[0]
                     val nombre = usuario.get("nombre")
                     val saldo = usuario.get("saldo")
-                    val descripcion = usuario.get("descripcion")
+                    val descripcion = usuario.get("description")
                     val localidad = usuario.get("localidad")
+                    val fecha = usuario.get("fecha")
                     binding.txtCiudad.setText("${localidad}")
                     binding.txtSaldo.setText("${saldo} H")
                     binding.txtUsuario.setText("${nombre}")
                     binding.txtDescripcion.setText("${descripcion}")
+                    binding.txtFichaRegistro.setText("${fecha.toString()}") //
                 }
 
             }

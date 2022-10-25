@@ -10,6 +10,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.Query
+import java.util.Date
 
 
 class registerActivity : AppCompatActivity() {
@@ -26,12 +27,12 @@ class registerActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        idusuario = generariduser()
+
         binding.buttonRegistrar.setOnClickListener(){
             userregister()
 
         }
-
-
     }
     fun userregister(){
         val terminos = binding.terminos.isChecked
@@ -42,8 +43,6 @@ class registerActivity : AppCompatActivity() {
             binding.textPassRegConfirmar.text.isNotEmpty()){
 
 
-            generariduser()
-
             println(idusuario)
             val nombre = binding.textNombre.text.toString()
             val apellidos = binding.textApellidos.text.toString()
@@ -53,6 +52,8 @@ class registerActivity : AppCompatActivity() {
             val confpass = binding.textPassRegConfirmar.text.toString()
             val reportes = 0
             var saldo = 0
+            var fecha = Date()
+            var description = "Description"
 
             println("${pass} + ${confpass}" )
 
@@ -74,14 +75,15 @@ class registerActivity : AppCompatActivity() {
                         "localidad" to localidad,
                         "reportes" to reportes,
                         "saldo" to saldo,
-                        "pass" to pass
+                        "pass" to pass,
+                        "fecha" to fecha,
+                        "description" to description
                     )
                     println(datos)
                     FirebaseAuth.getInstance()
                         .createUserWithEmailAndPassword(binding.textCorreoRegis.text.toString(),binding.textPasswordReg.text.toString())
                         .addOnCompleteListener(){
                             if(it.isSuccessful){
-
                                 db.collection("Usuarios")
                                     .document(idusuario.toString())
                                     .set(datos)
@@ -90,12 +92,12 @@ class registerActivity : AppCompatActivity() {
                                         showMessage("Registrado con exito")
                                         // lleva a la actividad login
                                         startActivity(Intent(this, loginActivity::class.java))
+                                        finish()
                                     }
                                     .addOnFailureListener{
                                         println("error bbdd")
-                                        showMessage("Error al registrar, intenta una contraseña fuerte")
+                                        showMessage("Error al registrar,")
                                     }
-
                             }else showMessage("Error al registrar, intenta una contraseña fuerte")
                         }
                 }else showMessage("Por favor acepta los terminos y condiciones de uso")
@@ -103,7 +105,7 @@ class registerActivity : AppCompatActivity() {
         }else showMessage("Por favor rellene todos los campos")
     }
 
-    private fun generariduser() {
+    private fun generariduser():Int{
         var cod :String
         val db = FirebaseFirestore.getInstance()
         db.collection("Usuarios")
@@ -123,11 +125,12 @@ class registerActivity : AppCompatActivity() {
                     idusuario = cod.toInt()
 
                 }
-                idusuario= idusuario+1
+                idusuario += 1
             }
             .addOnFailureListener(){
                 println("fallo")
             }
+        return idusuario
     }
     private fun showMessage(mensaje: String){
         //alerta de campos vacios
