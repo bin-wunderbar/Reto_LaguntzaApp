@@ -1,9 +1,8 @@
 package com.example.reto.Clases
 
-import android.content.res.Resources
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.reto.*
+import com.example.reto.ui.ofertas.*
 
 class PagerAdapter(fragmentActivity: FavoresFragment): FragmentStateAdapter(fragmentActivity){
     override fun getItemCount() = 3
@@ -19,7 +18,9 @@ class PagerAdapter(fragmentActivity: FavoresFragment): FragmentStateAdapter(frag
             2-> {
                 OfertasGeneralesFragment()
             }
-            else -> {AddDemandaFragment()}
+            else -> {
+                AddDemandaFragment()
+            }
         }
     }
 }

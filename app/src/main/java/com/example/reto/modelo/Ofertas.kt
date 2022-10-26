@@ -5,23 +5,18 @@ import java.util.*
 
 
 /*
-* clase Ofertas de tipo datos, contine las propiedades:
-* - name: nombre de oferta en chat, tipo String
-* - description: pequeño resumen de la oferta, tipo String
-* - ubicacion: donde se ha publicado la oferta, tipo String de momento
-* - caducidad: de tipo int indica cuando caduda la oferta
-* - photo: de tipo String de momento no se le da uso, para futuras actualizaciones
-* */
+* clase Ofertas de tipo datos, contine las propiedades: */
 @kotlinx.parcelize.Parcelize
 data class Ofertas(
-    val asignada: Boolean= false,
-    val publicada: Date? = null,
-    val email: String ? = null,
-    val nombre: String? = null,
-    val caducidad: String? = null,
-    val descripcion: String? = null,
-    val ubicacion: String? = null,
-    val horas: String? = null
+    var asignada: Boolean= false,
+    var from: String? = null,
+    var publicada: Date? = null,
+    var email: String ? = null,
+    var name: String? = null,
+    var caducidad: String? = null,
+    var descripcion: String? = null,
+    var ubicacion: String? = null,
+    var horas: String? = null
 ): Parcelable
 
 

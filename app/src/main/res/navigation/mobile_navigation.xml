@@ -18,7 +18,12 @@
             app:destination="@id/editPerfilFragment" />
         <action
             android:id="@+id/action_nav_home_to_loginActivity"
-            app:destination="@id/loginActivity"/>
+            app:destination="@id/loginActivity"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="false"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@id/loginActivity"
+            app:popUpToInclusive="true" />
 
         <action
             android:id="@+id/action_nav_home_to_Favores"
@@ -38,7 +43,7 @@
 
     <fragment
         android:id="@+id/detailsChatFragment"
-        android:name="com.example.reto.DetailsChatFragment"
+        android:name="com.example.reto.ui.chat.DetailsChatFragment"
         android:label="Chat"
         tools:layout="@layout/fragment_details_chat">
         <action
@@ -50,7 +55,7 @@
     </fragment>
     <fragment
         android:id="@+id/editPerfilFragment"
-        android:name="com.example.reto.EditPerfilFragment"
+        android:name="com.example.reto.ui.home.EditPerfilFragment"
         android:label="Editar Perfil"
         tools:layout="@layout/fragment_edit_perfil">
         <argument
@@ -59,7 +64,7 @@
     </fragment>
     <fragment
         android:id="@+id/Favores"
-        android:name="com.example.reto.FavoresFragment"
+        android:name="com.example.reto.ui.ofertas.FavoresFragment"
         android:label="Favores"
         tools:layout="@layout/fragment_favores" >
         <action
@@ -73,12 +78,7 @@
         tools:layout="@layout/activity_login" />
     <fragment
         android:id="@+id/addDemandaFragment"
-        android:name="com.example.reto.AddDemandaFragment"
+        android:name="com.example.reto.ui.ofertas.AddDemandaFragment"
         android:label="Añadir Favor"
         tools:layout="@layout/fragment_add_demanda" />
-    <fragment
-        android:id="@+id/misDemandasFragment"
-        android:name="com.example.reto.MisDemandasFragment"
-        android:label="Mis demandas"
-        tools:layout="@layout/fragment_mis_demandas" />
 </navigation>

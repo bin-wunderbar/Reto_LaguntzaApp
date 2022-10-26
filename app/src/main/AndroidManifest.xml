@@ -69,7 +69,7 @@
                 android:value=".Perfil_Activity" />
         </activity>
         <activity
-            android:name=".Publicidad"
+            android:name=".ui.publicidad.Publicidad"
             android:exported="false" />
 
         <activity
@@ -80,7 +80,7 @@
                 android:value=".loginActivity" />
         </activity>
         <activity
-            android:name=".Prencipal"
+            android:name=".ui.main.Prencipal"
             android:exported="false"
             android:theme="@style/Theme.Reto.NoActionBar">
             <meta-data

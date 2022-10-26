@@ -6,7 +6,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.reto.R
 import com.example.reto.modelo.Ofertas
 
-class RvAdapterOfertas (private val ofertasList: List<Ofertas>): RecyclerView.Adapter<OfertasViewHolder>(){
+class RvAdapterOfertas (private var ofertasList: List<Ofertas>): RecyclerView.Adapter<OfertasViewHolder>(){
+    /*
+    fun setData(list: List<Ofertas>){
+        ofertasList = list
+        notifyDataSetChanged()
+    }*/
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OfertasViewHolder {
         val view= LayoutInflater

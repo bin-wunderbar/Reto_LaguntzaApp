@@ -1,6 +1,5 @@
 package com.example.reto.ui.chat
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,15 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.reto.DetailsChatFragment
-import com.example.reto.DetailsChatFragmentDirections
 import com.example.reto.R
 import com.example.reto.adapter.RvAdapterChat
 import com.example.reto.modelo.ChatProvider
 import com.example.reto.modelo.UsuariosChat
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.auth.User
-import com.google.firebase.ktx.Firebase
 
 
 class ChatFragment : Fragment(R.layout.fragment_chat) {

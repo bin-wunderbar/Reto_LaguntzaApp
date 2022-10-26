@@ -4,9 +4,11 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.reto.Clases.RetoApplication.Companion.prefs
 import com.example.reto.databinding.ActivityLoginBinding
+import com.example.reto.ui.main.Prencipal
 import com.google.firebase.auth.FirebaseAuth
 
 class loginActivity : AppCompatActivity() {
@@ -68,7 +70,7 @@ class loginActivity : AppCompatActivity() {
 
         if(email == "administrador@laguntzapp.euz"){
             //administrador
-            startActivity(Intent(this, Admin_Activity::class.java))
+           /* startActivity(Intent(this, Admin_Activity::class.java))*/
         }
         else{
             // usuario normal
@@ -77,6 +79,10 @@ class loginActivity : AppCompatActivity() {
             startActivity(Intent(this, Prencipal::class.java))
         }
 
+    }
+
+    override fun onBackPressed() {
+       Toast.makeText(this, "Acceso denegado", Toast.LENGTH_SHORT).show()
     }
     private fun camposvacios(){
         //alerta de campos vacios
