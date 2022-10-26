@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="10dp"
-                android:hint="Indica una fecha de caducidad"
+                android:hint="Indica una fecha de caducidad en dias"
                 android:textColor="#CE9563"
                 card_view:drawableLeftCompat="@drawable/ic_mes"
                 card_view:layout_constraintStart_toStartOf="parent"
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="10dp"
-                android:hint="Indica cantidad de horas"
+                android:hint="Indica un numero de horas "
                 android:textColor="#CE9563"
                 card_view:drawableLeftCompat="@drawable/ic_hora"
                 card_view:layout_constraintStart_toStartOf="parent"
@@ -83,7 +83,7 @@
                 tools:ignore="MissingConstraints" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnPublicar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"

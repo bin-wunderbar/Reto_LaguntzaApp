@@ -23,7 +23,7 @@ class OfertasGeneralesFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tercer, container, false)
+        return inflater.inflate(R.layout.fragment_ofertas_generales, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,7 +36,7 @@ class OfertasGeneralesFragment : Fragment() {
 
         val db = FirebaseFirestore.getInstance()
 
-        db.collection("favores")
+        db.collection("Favores")
             .get()
             .addOnSuccessListener {
                 if (!it.isEmpty) {

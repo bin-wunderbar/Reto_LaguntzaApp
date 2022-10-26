@@ -10,15 +10,14 @@ class OfertasViewHolder (view: View) : RecyclerView.ViewHolder(view) {
     val binding = ItemFavoresBinding.bind(view)
     fun bind(oferta: Ofertas) {
 
-        binding.nameTxt.text = oferta.name
-        binding.descriptionTxt.text = oferta.descripcion
-        binding.ubicacionTxt.text = oferta.ubicacion
-        binding.caducidadTxt.text = oferta.caducidad.toString()
+        binding.nameTxt.text        = oferta.nombre.toString()
+        binding.descriptionTxt.text = oferta.descripcion.toString()
+        binding.ubicacionTxt.text   = oferta.ubicacion.toString()
+        binding.caducidadTxt.text   = oferta.caducidad.toString()
 
         // al dar click sobre la carta muestra mensaje con nombre de la carta
         itemView.setOnClickListener{
-
-            Toast.makeText(binding.nameTxt.context, oferta.name, Toast.LENGTH_SHORT).show()
+            //Toast.makeText(binding.nameTxt.context, oferta.nombre, Toast.LENGTH_SHORT).show()
         }
     }
 }

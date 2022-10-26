@@ -15,7 +15,7 @@ class MisOfertasFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_primer, container, false)
+        return inflater.inflate(R.layout.fragment_mis_ofertas, container, false)
     }
 
 

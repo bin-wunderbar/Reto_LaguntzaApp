@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.navArgs
@@ -23,6 +24,10 @@ class DetailsChatFragment : Fragment(R.layout.fragment_details_chat) {
         binding = FragmentDetailsChatBinding.bind(view)
         binding.usuariotxt.text = args.chatObject.usuario
         Glide.with(binding.fotoimg.context).load(args.chatObject.photo).into(binding.fotoimg)
+        binding.enviar.setOnClickListener{
+
+            Toast.makeText(context, "en fase desarrollo", Toast.LENGTH_SHORT).show()
+        }
 
     }
 

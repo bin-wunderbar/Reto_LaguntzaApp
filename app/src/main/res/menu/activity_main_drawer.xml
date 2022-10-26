@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
@@ -15,8 +14,8 @@
             android:title="@string/chat">
         </item>
         <item
-            android:id="@+id/ofertasFragment"
-            android:title="@string/favores"
+            android:id="@+id/Favores"
+            android:title="Favores"
             android:icon="@drawable/ic_list">
         </item>
 
@@ -26,10 +25,6 @@
             android:icon="@drawable/ic_logout">
         </item>
     </group>
-    <item
-        android:id="@+id/Ejemplo"
-        android:title="ejemplo"
-        android:icon="@drawable/account">
-    </item>
+
 
 </menu>

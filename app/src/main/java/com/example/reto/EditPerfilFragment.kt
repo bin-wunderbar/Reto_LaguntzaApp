@@ -73,8 +73,9 @@ class EditPerfilFragment : Fragment() {
 
                 user!!.updatePassword(pass).addOnCompleteListener{ task ->
                     if (task.isSuccessful) {
-
-
+                        updateData("pass",pass,id)
+                    }else {
+                        aviso("error","no se ha podido actualizar contraseña")
                     }
                 }
 

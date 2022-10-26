@@ -4,13 +4,11 @@ package com.example.reto.ui.home
 
 
 
-import android.os.Build
-import android.os.Bundle
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.reto.Clases.RetoApplication.Companion.prefs
@@ -63,11 +61,6 @@ class HomeFragment : Fragment() {
 
     fun cargarperfil() {
 
-        /*
-          val simpleDate = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
-          val currentDate = simpleDate.format(Date())
-        }*/
-
         val db = FirebaseFirestore.getInstance()
         db.collection("Usuarios")
             .whereEqualTo("email", email)
@@ -80,10 +73,13 @@ class HomeFragment : Fragment() {
                     val descripcion = usuario.get("description")
                     val localidad = usuario.get("localidad")
                     id    = usuario.get("id").toString()
+
+                    // setea timestamp a la fecha con formato -----------------------
                     val fecha= usuario.get("fecha") as Timestamp
                     val fechaActual= fecha.toDate()
                     val simpleDate = SimpleDateFormat("MMM, yyyy")
                     val currentDate = simpleDate.format(fechaActual)
+                    //----------------------------------------------------------------
                     binding.txtCiudad.setText("${localidad}")
                     binding.txtSaldo.setText("${saldo} H")
                     binding.txtUsuario.setText("${nombre}")

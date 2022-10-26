@@ -1,7 +1,7 @@
 package com.example.reto.modelo
 
 import android.os.Parcelable
-
+import java.util.*
 
 
 /*
@@ -14,10 +14,14 @@ import android.os.Parcelable
 * */
 @kotlinx.parcelize.Parcelize
 data class Ofertas(
+    val asignada: Boolean= false,
+    val publicada: Date? = null,
+    val email: String ? = null,
+    val nombre: String? = null,
     val caducidad: String? = null,
-    val name: String? = null,
     val descripcion: String? = null,
     val ubicacion: String? = null,
+    val horas: String? = null
 ): Parcelable
 
 

@@ -38,31 +38,38 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
         recyclerview = view.findViewById(R.id.rvListChat)
         recyclerview.layoutManager = layoutManager
         recyclerview.setHasFixedSize(true)
-        Usuarios = arrayListOf()
-
-        val db: FirebaseFirestore
-        db = FirebaseFirestore.getInstance()
-        db.collection("Usuarios")
-            .get().addOnSuccessListener{
-                if (!it.isEmpty) {
-                    for (data in it.documents) {
-                        val user: UsuariosChat? = data.toObject(UsuariosChat::class.java)
-                        if(user != null) {
-                            Usuarios.add(user)
-                        }
-                    }
-                    adapter = RvAdapterChat(Usuarios){
-                        onChatClick(it)
-                    }
-                    recyclerview.adapter = adapter
-                }
-            }
+        recyclerview.adapter =  RvAdapterChat(ChatProvider.listachat){
+            onChatClick(it)
+        }
     }
 
     private fun onChatClick(chat: UsuariosChat){
         val action = ChatFragmentDirections.actionChatFragmentToDetailsChatFragment(chat)
         findNavController().navigate(action)
     }
+
+    /*
+      private fun listarDatos(){
+      Usuarios = arrayListOf()
+
+       val db: FirebaseFirestore
+       db = FirebaseFirestore.getInstance()
+       db.collection("Usuarios")
+           .get().addOnSuccessListener{
+               if (!it.isEmpty) {
+                   for (data in it.documents) {
+                       val user: UsuariosChat? = data.toObject(UsuariosChat::class.java)
+                       if(user != null) {
+                           Usuarios.add(user)
+                       }
+                   }
+                   adapter = RvAdapterChat(Usuarios){
+                       onChatClick(it)
+                   }
+                   recyclerview.adapter = adapter
+               }
+       }
+           }*/
 
 
 }
