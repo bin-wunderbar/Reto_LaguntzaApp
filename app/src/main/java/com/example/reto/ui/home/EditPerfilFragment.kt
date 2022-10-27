@@ -1,5 +1,6 @@
 package com.example.reto.ui.home
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,6 +26,8 @@ class EditPerfilFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        // Desactiva la rotacion de la pantalla
+        getActivity()?.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         id= args.email
         super.onViewCreated(view, savedInstanceState)
 
@@ -63,25 +66,6 @@ class EditPerfilFragment : Fragment() {
             updateData("apellidos", apellidos,id)
         }
 
-        // si los campos de la contraseña no estan vacios y cuenciden
-      /*  if (binding.txtPassword.text.isNotEmpty() && binding.txtConfirmarPassword.text.isNotEmpty()) {
-            val pass = binding.txtPassword.text.toString()
-            val confirmpassword = binding.txtConfirmarPassword.text.toString()
-            if (pass == confirmpassword) {
-                val user = FirebaseAuth.getInstance().currentUser
-
-                user!!.updatePassword(pass).addOnCompleteListener{ task ->
-                    if (task.isSuccessful) {
-                        updateData("pass",pass,id)
-                    }else {
-                        aviso("error","no se ha podido actualizar contraseña")
-                    }
-                }
-
-            }else{
-                aviso("error", "las contraseña no son iguales")
-            }
-        }*/
 
     }
 

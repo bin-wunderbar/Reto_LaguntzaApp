@@ -41,7 +41,7 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="12dp"
-                    android:text="@string/usuario"
+                    android:text="Mario"
                     android:textColor="@color/black"
                     android:textSize="24dp"
                     card_view:layout_constraintStart_toEndOf="@id/fotoimg"

@@ -17,7 +17,7 @@ class Prefs(val context: Context) {
     }
 
     // Guarda id usuario
-    fun saveEmail(id: Int) {
+    fun saveId(id: Int) {
         storage.edit().putString(SHARED_ID, id.toString()).apply()
     }
 

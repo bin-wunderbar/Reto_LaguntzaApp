@@ -1,5 +1,6 @@
 package com.example.reto.ui.ofertas
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -31,10 +32,14 @@ class AddDemandaFragment : Fragment() {
         _binding = FragmentAddDemandaBinding.inflate(inflater, container, false)
         val root: View = binding.root
         getSaldo()
+        generarId()
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        // Desactiva la rotacion de la pantalla
+        getActivity()?.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
+
         super.onViewCreated(view, savedInstanceState)
         email = prefs.getEmail()
         binding.btnPublicar.setOnClickListener{

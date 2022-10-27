@@ -43,7 +43,7 @@ class MisOfertasFragment : Fragment() {
         val db = FirebaseFirestore.getInstance()
         email = RetoApplication.prefs.getEmail()
         db.collection("ofertas")
-            .whereEqualTo("usuario", email)
+            .whereEqualTo("from", email)
             .get()
             .addOnSuccessListener {
                 if (!it.isEmpty) {

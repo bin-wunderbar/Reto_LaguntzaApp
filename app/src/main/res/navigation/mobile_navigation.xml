@@ -70,6 +70,12 @@
         <action
             android:id="@+id/action_Favores_to_addDemandaFragment2"
             app:destination="@id/addDemandaFragment" />
+        <action
+            android:id="@+id/action_Favores_to_asignarOfertaFragment2"
+            app:destination="@id/asignarOfertaFragment" />
+        <action
+            android:id="@+id/action_Favores_to_eliminarOfertaFragment2"
+            app:destination="@id/eliminarOfertaFragment" />
     </fragment>
     <activity
         android:id="@+id/loginActivity"
@@ -81,4 +87,22 @@
         android:name="com.example.reto.ui.ofertas.AddDemandaFragment"
         android:label="Añadir Favor"
         tools:layout="@layout/fragment_add_demanda" />
+    <fragment
+        android:id="@+id/asignarOfertaFragment"
+        android:name="com.example.reto.ui.ofertas.AsignarOfertaFragment"
+        android:label="Aceptar favor"
+        tools:layout="@layout/fragment_asignar_oferta" >
+        <argument
+            android:name="oferta"
+            app:argType="com.example.reto.modelo.Ofertas" />
+    </fragment>
+    <fragment
+        android:id="@+id/eliminarOfertaFragment"
+        android:name="com.example.reto.ui.ofertas.EliminarOfertaFragment"
+        android:label="Eliminar oferta"
+        tools:layout="@layout/fragment_eliminar_oferta" >
+        <argument
+            android:name="oferta"
+            app:argType="com.example.reto.modelo.Ofertas" />
+    </fragment>
 </navigation>

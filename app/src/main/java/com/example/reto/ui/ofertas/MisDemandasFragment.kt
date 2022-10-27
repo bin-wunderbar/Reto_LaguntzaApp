@@ -73,11 +73,19 @@ class MisDemandasFragment : Fragment() {
                             OfertasList.add(ofertas)
                         }
                     }
-                    adapter = RvAdapterDemanda(OfertasList)
+                    adapter = RvAdapterDemanda(OfertasList){
+                        navigar(it)
+                    }
                     recyclerview.adapter = adapter
                 }
             }
     }
+
+    private fun navigar(oferta: Ofertas) {
+        val action = FavoresFragmentDirections.actionFavoresToEliminarOfertaFragment2(oferta)
+        findNavController().navigate(action)
+    }
+
     // lanza fragment añadir demanda nueva
     private fun aniadirDemanda(){
         binding.btnAddDemanda.setOnClickListener{

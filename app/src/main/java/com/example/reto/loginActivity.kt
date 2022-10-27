@@ -60,7 +60,7 @@ class loginActivity : AppCompatActivity() {
     private fun loginexitoso(email : String){
         if(email == "administrador@laguntzapp.euz"){
             //administrador
-           /* startActivity(Intent(this, Admin_Activity::class.java))*/
+           startActivity(Intent(this, Admin_Activity::class.java))
         }
         else{
             /*Guarda en preferencias el email del usuario que ha iniciado sesion

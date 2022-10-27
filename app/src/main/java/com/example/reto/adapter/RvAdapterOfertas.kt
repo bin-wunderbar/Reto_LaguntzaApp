@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.reto.R
 import com.example.reto.modelo.Ofertas
 
-class RvAdapterOfertas (private var ofertasList: List<Ofertas>): RecyclerView.Adapter<OfertasViewHolder>(){
+class RvAdapterOfertas (private var ofertasList: List<Ofertas>,private val escuchador:(Ofertas )-> Unit): RecyclerView.Adapter<OfertasViewHolder>(){
     /*
     fun setData(list: List<Ofertas>){
         ofertasList = list
@@ -22,6 +22,9 @@ class RvAdapterOfertas (private var ofertasList: List<Ofertas>): RecyclerView.Ad
 
     override fun onBindViewHolder(holder: OfertasViewHolder, position: Int) {
         holder.bind(ofertasList[position])
+        holder.itemView.setOnClickListener {
+            escuchador(ofertasList[position])
+        }
     }
 
     override fun getItemCount(): Int = ofertasList.size

@@ -22,6 +22,7 @@ class RvAdapterMisOfertas (private var ofertasList: List<Ofertas>): RecyclerView
 
     override fun onBindViewHolder(holder: MisOfertasViewHolder, position: Int) {
         holder.bind(ofertasList[position])
+
     }
 
     override fun getItemCount(): Int = ofertasList.size

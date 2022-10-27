@@ -10,6 +10,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.reto.R
+import com.example.reto.activarPublicidad
 import com.example.reto.databinding.ActivityPrencipalBinding
 
 
@@ -48,7 +49,7 @@ class Prencipal : AppCompatActivity() {
         super.onResume()
 
         // llamar a publicidad
-        //activarPublicidad(this)
+        activarPublicidad(this)
     }
 
 

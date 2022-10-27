@@ -5,75 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo"
-    tools:context=".Admin_Activity">
+    tools:context=".Admin_Activity"
+    android:id="@+id/principal"
+    android:name="com.example.reto.Activity_Admin"
+    tools:layout="@layout/activity_admin">
 
 
-    <TextView
-        android:id="@+id/txtAdmin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="65dp"
-        android:hint="@string/userAdmin"
-        style="@style/texto"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtDesc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="191dp"
-        style="@style/texto"
-        android:textColorHint="@color/white"
-        android:layout_marginBottom="98dp"
-        android:text="@string/gestionar_usuarios_laguntzaapp"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-
-    <RadioGroup
-        android:id="@+id/rdOptionUser"
-        android:layout_width="231dp"
-        android:layout_height="169dp"
-        android:layout_marginTop="360dp"
-        android:layout_marginEnd="88dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <RadioButton
-            android:id="@+id/btnradioListarUser"
-            style="@style/botones"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="53dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/fondo_boton"
-            android:checked="false"
-            android:text="@string/ver_todos_los_usuarios"
-            app:layout_constraintBottom_toTopOf="@+id/btnradioReportUser"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="match_parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDesc" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical"
+            >
 
-        <RadioButton
-            android:id="@+id/btnradioReportUser"
-            android:layout_width="match_parent"
-            android:layout_height="53dp"
-            android:layout_marginBottom="302dp"
-            style="@style/botones"
-            android:background="@drawable/fondo_boton"
-            android:text="@string/ver_usuarios_con_reportes"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/btnradioListarUser"
-            app:layout_constraintTop_toBottomOf="@+id/btnradioListarUser" />
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/fragmentContainerView2"
+                    android:name="com.example.reto.HeaderAdminFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:layout="@layout/fragment_header_admin" />
 
-    </RadioGroup>
+        </LinearLayout>
+
+
+
 
 
 

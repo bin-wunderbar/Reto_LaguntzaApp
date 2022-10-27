@@ -23,7 +23,7 @@ fun activarPublicidad(actividad: AppCompatActivity) {
                 // comprueba si la actividad esta a la vista se inicia el contador
                 if (!actividad.isFinishing){
                     // tiempo en el que espera para mostrar publicidad cada vez
-                    for (i in 5 downTo 1) {
+                    for (i in 60 downTo 1) {
                         Thread.sleep(1000)
                     }
                 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LaguntzApp</string>
+    <!--LOGIN-->
+    <string name="iniciar_sesion">Iniciar sesion</string>
+    <string name="Registro">Registrate</string>
+    <!--REGISTRO-->
+    <string name="Registrar">Registrate</string>
+    <string name="RegistrarNombre">Nombre</string>
+    <string name="RegistrarApellido">Apellidos</string>
+    <string name="RegistrarLocalidad">Localidad</string>
+    <string name="RegistrarEmail">Email</string>
+    <string name="RegistrarPass">Password</string>
+    <string name="RegistrarPassconfirmar">Confirmar Password</string>
+    <string name="terminosycondiciones">He leído y acepto los</string>
+    <string name="terminosycondicionesboton">Terminos y condiciones</string>
+    <!--PERFIL DE USUARIO FRAGMENTHOME-->
+    <string name="botoneditarperfil">Editar Perfil</string>
+    <!--FRAGMENTEDITPERFIL-->
+
+    <string name="botoneditarperfilCONFIRMARCAMBIOS">Confirmar cambios</string>
+
+    <!--FRAGMENTADDEMANDA-->
+    <string name="titulodemanda">Titulo de la publicacion</string>
+    <string name="Descripciondemanda">Breve descripcion de la demanda</string>
+    <string name="LocalidadDemanda">Localidad</string>
+    <string name="FechaDemanda">Fecha de caducidad de la demanda</string>
+    <string name="Horasdelademanda">Coste de horas</string>
+    <string name="publicarfavor">Publicar favor</string>
+</resources>
