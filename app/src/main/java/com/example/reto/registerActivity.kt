@@ -99,13 +99,12 @@ class registerActivity : AppCompatActivity() {
                                         finish()
                                     }
                                     .addOnFailureListener{
-                                        println("error bbdd")
-                                        showMessage("Error al registrar,")
+                                        showMessage("No se ha podido registrarse,")
                                     }
-                            }else showMessage("Error al registrar, intenta una contraseña fuerte")
+                            }else showMessage("Intenta una contraseña fuerte")
                         }
                 }else showMessage("Por favor acepta los terminos y condiciones de uso")
-            }else showMessage("Error las contraseñas no cinciden")
+            }else showMessage("Las contraseñas no cinciden")
         }else showMessage("Por favor rellene todos los campos")
     }
 
@@ -119,15 +118,11 @@ class registerActivity : AppCompatActivity() {
             .addOnSuccessListener { docs->
                 var dato = ""
                 for  (documento in docs){
-
                     dato += "${documento.get("id")}\n"
-
-
                     cod = dato.get(0).toString()
 
-                    println("preuba numero " + cod)
+                    println("preuba numero $cod")
                     idusuario = cod.toInt()
-
                 }
                 idusuario += 1
             }

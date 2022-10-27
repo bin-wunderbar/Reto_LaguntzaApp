@@ -17,19 +17,20 @@
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/activity_prencipal.xml" value="0.18193330519206416" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/activity_prueba.xml" value="0.18426678067550234" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/activity_publicidad.xml" value="0.22" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/activity_report_user.xml" value="0.18426678067550234" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/app_bar_prencipal.xml" value="0.18426678067550234" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/content_prencipal.xml" value="0.18426678067550234" />
-        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_add_demanda.xml" value="0.1" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_add_demanda.xml" value="0.18" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_chat.xml" value="0.14" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_details_chat.xml" value="0.22" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_edit_perfil.xml" value="0.18426678067550234" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_ejemplo.xml" value="0.18426678067550234" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_favores.xml" value="0.18426678067550234" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_mis_demandas.xml" value="0.1" />
-        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_mis_ofertas.xml" value="0.11714407866609662" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_mis_demandas.xml" value="0.33" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_mis_ofertas.xml" value="0.33" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_ofertas.xml" value="0.1" />
-        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_ofertas_generales.xml" value="0.18426678067550234" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_ofertas_generales.xml" value="0.25" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_primer.xml" value="0.17272338606241983" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_prueba.xml" value="0.18426678067550234" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/fragment_scrolling.xml" value="0.18426678067550234" />
@@ -38,10 +39,14 @@
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/item_chat.xml" value="0.22447916666666667" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/item_favores.xml" value="0.33" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/item_message.xml" value="0.1834117144078666" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/item_mis_demandas.xml" value="0.33" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/item_mis_favores.xml" value="0.33" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/item_mis_ofertas.xml" value="0.33" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/item_ofertas_generales.xml" value="0.33" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/nav.xml" value="0.168359375" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/nav_header.xml" value="0.33" />
-        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/nav_header_prencipal.xml" value="0.18426678067550234" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/nav_header_prencipal.xml" value="0.33" />
+        <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/single_items_user.xml" value="0.18426678067550234" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/layout/single_itemss.xml" value="0.25" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/menu/activity_main_drawer.xml" value="0.33" />
         <entry key="..\:/curso_2023/AD/Reto/Reto_uno/app/src/main/res/menu/menu_chat.xml" value="0.1" />

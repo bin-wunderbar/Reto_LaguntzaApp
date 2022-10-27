@@ -16,7 +16,7 @@ class RvAdapterOfertas (private var ofertasList: List<Ofertas>): RecyclerView.Ad
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OfertasViewHolder {
         val view= LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.item_favores, parent, false)
+            .inflate(R.layout.item_ofertas_generales, parent, false)
         return OfertasViewHolder(view)
     }
 

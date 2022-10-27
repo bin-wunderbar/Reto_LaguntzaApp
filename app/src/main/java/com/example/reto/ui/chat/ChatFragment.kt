@@ -16,10 +16,7 @@ import com.example.reto.modelo.UsuariosChat
 
 class ChatFragment : Fragment(R.layout.fragment_chat) {
 
-   private lateinit var adapter: RvAdapterChat
    private lateinit var recyclerview: RecyclerView
-   lateinit var Usuarios: ArrayList<UsuariosChat>
-
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,): View? {
         // Inflate the layout for this fragment
@@ -28,42 +25,21 @@ class ChatFragment : Fragment(R.layout.fragment_chat) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val layoutManager = LinearLayoutManager(context)
-        recyclerview = view.findViewById(R.id.rvListChat)
-        recyclerview.layoutManager = layoutManager
-        recyclerview.setHasFixedSize(true)
-        recyclerview.adapter =  RvAdapterChat(ChatProvider.listachat){
-            onChatClick(it)
-        }
+        cargarDatos()
+
     }
 
     private fun onChatClick(chat: UsuariosChat){
         val action = ChatFragmentDirections.actionChatFragmentToDetailsChatFragment(chat)
         findNavController().navigate(action)
     }
-
-    /*
-      private fun listarDatos(){
-      Usuarios = arrayListOf()
-
-       val db: FirebaseFirestore
-       db = FirebaseFirestore.getInstance()
-       db.collection("Usuarios")
-           .get().addOnSuccessListener{
-               if (!it.isEmpty) {
-                   for (data in it.documents) {
-                       val user: UsuariosChat? = data.toObject(UsuariosChat::class.java)
-                       if(user != null) {
-                           Usuarios.add(user)
-                       }
-                   }
-                   adapter = RvAdapterChat(Usuarios){
-                       onChatClick(it)
-                   }
-                   recyclerview.adapter = adapter
-               }
-       }
-           }*/
-
-
+    private fun cargarDatos(){
+        val layoutManager = LinearLayoutManager(context)
+        recyclerview = view?.findViewById(R.id.rvListChat)!!
+        recyclerview.layoutManager = layoutManager
+        recyclerview.setHasFixedSize(true)
+        recyclerview.adapter =  RvAdapterChat(ChatProvider.listachat){
+            onChatClick(it)
+        }
+    }
 }

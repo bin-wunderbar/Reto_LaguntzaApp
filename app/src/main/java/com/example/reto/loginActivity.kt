@@ -27,9 +27,11 @@ class loginActivity : AppCompatActivity() {
         }
         binding.buttonlogin.setOnClickListener{
             login()
-
-
         }
+    }
+    // Desactivar el button atras
+    override fun onBackPressed() {
+        Toast.makeText(this, "Acceso denegado", Toast.LENGTH_SHORT).show()
     }
 
     fun login(){
@@ -45,56 +47,37 @@ class loginActivity : AppCompatActivity() {
                 }
                 else {
                     //login fallido
-                    errorlogin()
+                    aviso("Error", "Usuario o contraseña incorrectos")
                 }
             }
         }
         else{
             //campos vacios
-            camposvacios()
+            aviso("Error", "Campos vacios")
         }
-
-
-
     }
-    private fun errorlogin(){
-        //alerta de usuario incorrecto
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage("Usuario o contraseña incorrectos")
-        builder.setPositiveButton("Aceptar",null)
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
-    }
+
     private fun loginexitoso(email : String){
-
         if(email == "administrador@laguntzapp.euz"){
             //administrador
            /* startActivity(Intent(this, Admin_Activity::class.java))*/
         }
         else{
-            // usuario normal
+            /*Guarda en preferencias el email del usuario que ha iniciado sesion
+            * lanza la activity usuario normal*/
             prefs.saveEmail(email)
-            currentuser()
             startActivity(Intent(this, Prencipal::class.java))
         }
-
     }
 
-    override fun onBackPressed() {
-       Toast.makeText(this, "Acceso denegado", Toast.LENGTH_SHORT).show()
-    }
-    private fun camposvacios(){
-        //alerta de campos vacios
+    //Alerta con dos parametros titulo de la alerta y mensaje de la alerta
+    private fun aviso(titulo: String, mensaje: String){
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage("error rellene los campos")
+        builder.setTitle(titulo)
+        builder.setMessage(mensaje)
         builder.setPositiveButton("Aceptar",null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
-    private fun currentuser(){
-        val sharedPreferences: SharedPreferences = getSharedPreferences("Currentuser",0)
-        sharedPreferences.edit().putString("CurrentUser",binding.txtemail.text.toString()).apply()
-    }
+
 }

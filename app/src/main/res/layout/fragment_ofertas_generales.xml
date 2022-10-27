@@ -16,6 +16,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints"
         tools:itemCount="8"
-        tools:listitem="@layout/item_favores" />
+        tools:listitem="@layout/item_ofertas_generales" />
 
 </FrameLayout>

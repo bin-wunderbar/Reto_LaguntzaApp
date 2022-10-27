@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import com.example.reto.Clases.RetoApplication.Companion.prefs
 import com.example.reto.databinding.FragmentAddDemandaBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import java.util.*
 
 
@@ -17,6 +18,7 @@ class AddDemandaFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var email : String
     private  var saldo: Int = 0
+    var idOferta: Int = 0
 
 
 
@@ -38,9 +40,8 @@ class AddDemandaFragment : Fragment() {
         binding.btnPublicar.setOnClickListener{
             if (comprobarCampos()){
                 publicarFavor()
-
             }else{
-                aviso("error", "por favor completa los campos")
+                aviso("error", "Por favor completa los campos")
             }
         }
     }
@@ -57,8 +58,7 @@ class AddDemandaFragment : Fragment() {
 
     // Comprueba si los campos no estan vacios
     private fun comprobarCampos(): Boolean {
-        return  binding.caducidadTxt.text.isNotEmpty() &&
-                binding.nameTxt.text.isNotEmpty() &&
+        return  binding.nameTxt.text.isNotEmpty() &&
                 binding.descriptionTxt.text.isNotEmpty() &&
                 binding.txtCantidadHoras.text.isNotEmpty() &&
                 binding.ubicacionTxt.text.isNotEmpty()
@@ -82,31 +82,58 @@ class AddDemandaFragment : Fragment() {
     // Publicar favor
     private fun publicarFavor(){
         val nombre       = binding.nameTxt.text.toString()
-        val caducidad    = binding.caducidadTxt.text.toString()
         val description  = binding.descriptionTxt.text.toString()
         val ubicacion    = binding.ubicacionTxt.text.toString()
         val horas        = binding.txtCantidadHoras.text.toString()
+        println("resultado antes: " +idOferta)
+        generarId()
 
         val db = FirebaseFirestore.getInstance()
         val demanda = hashMapOf(
+            "id" to idOferta,
             "asignada" to false,
             "from" to "",
             "publicada" to Date(),
             "usuario" to email,
             "name" to nombre,
-            "caducidad" to caducidad,
             "descripcion" to description,
             "ubicacion" to ubicacion,
             "horas" to horas
         )
-        db.collection("Favores")
-            .document()
+        println("resultado: " +idOferta)
+        db.collection("ofertas")
+            .document(idOferta.toString())
             .set(demanda)
             .addOnSuccessListener {
                 aviso("Exito","Se ha publicado")
+                println("resultado: a la hora  " +idOferta)
             }
             .addOnFailureListener{
                 aviso("Error ,", "no se ha podido publicar")
             }
+    }
+
+    // genera id de ofertas
+    fun generarId():Int{
+        var cod :String
+        val db = FirebaseFirestore.getInstance()
+        db.collection("ofertas")
+            //ordenar por desceniente limite de 1 haciendo q solo coja el mas grande
+            .orderBy("id", Query.Direction.DESCENDING).limit(1)
+            .get()
+            .addOnSuccessListener { docs->
+                var dato = ""
+                for  (documento in docs){
+                    dato += "${documento.get("id")}\n"
+                    cod = dato.get(0).toString()
+                    println("preuba numero $cod")
+                    idOferta = cod.toInt()
+                }
+                idOferta += 1
+            }
+            .addOnFailureListener(){
+                println("fallo")
+            }
+        return idOferta
     }
 }

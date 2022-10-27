@@ -40,7 +40,7 @@ class OfertasGeneralesFragment : Fragment() {
 
         val db = FirebaseFirestore.getInstance()
         email = prefs.getEmail()
-        db.collection("Favores")
+        db.collection("ofertas")
             .whereNotEqualTo("usuario", email)
             .get()
             .addOnSuccessListener {
