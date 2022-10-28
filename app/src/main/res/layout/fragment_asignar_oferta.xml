@@ -8,7 +8,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="252dp"
+        android:layout_height="304dp"
         android:clipToPadding="false"
         android:padding="30dp"
         card_view:cardCornerRadius="5dp"
@@ -17,7 +17,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="236dp"
+            android:layout_height="288dp"
             android:orientation="vertical">
 
 
@@ -25,22 +25,22 @@
                 android:id="@+id/nameTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="randomFavor"
                 android:textColor="#CE9563"
                 android:textSize="16sp"
                 card_view:layout_constraintStart_toStartOf="parent"
                 card_view:layout_constraintTop_toTopOf="parent"
-                card_view:textAllCaps="true" />
+                card_view:textAllCaps="true"
+                tools:text="randomFavor" />
 
             <TextView
                 android:id="@+id/descriptionTxt"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginTop="10dp"
-                tools:text="lorem"
                 android:textColor="#CE9563"
                 card_view:layout_constraintTop_toBottomOf="@id/nameTxt"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                tools:text="lorem" />
 
             <TextView
                 android:id="@+id/ubicacionTxt1"
@@ -57,13 +57,13 @@
                 android:id="@+id/ubicacionTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="24dp"
-                android:layout_marginTop="4dp"
-                tools:text="txurdinaga"
                 android:layout_marginStart="60dp"
+                android:layout_marginTop="4dp"
                 android:textColor="#CE9563"
                 card_view:layout_constraintStart_toEndOf="@id/ubicacionTxt1"
                 card_view:layout_constraintTop_toBottomOf="@id/descriptionTxt"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                tools:text="txurdinaga" />
 
             <TextView
                 android:id="@+id/usuarioPublica1"
@@ -79,13 +79,13 @@
                 android:id="@+id/usuarioPublica"
                 android:layout_width="wrap_content"
                 android:layout_height="24dp"
-                android:layout_marginTop="4dp"
                 android:layout_marginStart="10dp"
-                tools:text="youssef@gmail.com"
+                android:layout_marginTop="4dp"
                 android:textColor="#CE9563"
                 card_view:layout_constraintStart_toEndOf="@id/usuarioPublica1"
                 card_view:layout_constraintTop_toBottomOf="@id/ubicacionTxt"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                tools:text="youssef@gmail.com" />
 
             <TextView
                 android:id="@+id/estado1"
@@ -102,13 +102,13 @@
                 android:id="@+id/estado"
                 android:layout_width="wrap_content"
                 android:layout_height="24dp"
-                android:layout_marginTop="4dp"
                 android:layout_marginStart="50dp"
-                tools:text="false"
+                android:layout_marginTop="4dp"
                 android:textColor="#CE9563"
                 card_view:layout_constraintStart_toEndOf="@id/estado1"
                 card_view:layout_constraintTop_toBottomOf="@id/txtFecha1"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                tools:text="false" />
 
             <TextView
                 android:id="@+id/txtFecha1"
@@ -118,19 +118,19 @@
                 android:text="Publicada:    "
                 android:textColor="#CE9563"
                 card_view:layout_constraintTop_toBottomOf="@id/usuarioPublica1"
-                tools:ignore="MissingConstraints"/>
+                tools:ignore="MissingConstraints" />
 
             <TextView
                 android:id="@+id/txtFecha"
                 android:layout_width="wrap_content"
                 android:layout_height="24dp"
-                android:layout_marginTop="4dp"
                 android:layout_marginStart="20dp"
-                tools:text="20/20/30"
+                android:layout_marginTop="4dp"
                 android:textColor="#CE9563"
                 card_view:layout_constraintStart_toEndOf="@id/txtFecha1"
                 card_view:layout_constraintTop_toBottomOf="@id/usuarioPublica1"
-                tools:ignore="MissingConstraints" />
+                tools:ignore="MissingConstraints"
+                tools:text="20/20/30" />
 
             <Button
                 android:id="@+id/btnAsignar"
@@ -138,6 +138,15 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="12dp"
                 android:text="Asignar"
+                card_view:layout_constraintBottom_toBottomOf="parent"
+                card_view:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/btnReportar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="268dp"
+                android:text="Reportar"
                 card_view:layout_constraintBottom_toBottomOf="parent"
                 card_view:layout_constraintEnd_toEndOf="parent" />
 

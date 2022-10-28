@@ -1,11 +1,6 @@
 package com.example.reto.ui.home
 
-
-
-
-
-
-import android.content.pm.ActivityInfo
+//----------------------------------------------------------------
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,7 +12,7 @@ import com.example.reto.databinding.FragmentHomeBinding
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
-
+//----------------------------------------------------------------
 
 
 class HomeFragment : Fragment() {
@@ -28,6 +23,7 @@ class HomeFragment : Fragment() {
     private lateinit var email: String
     private lateinit var id : String
 
+    //----------------------------------------------------------------
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
@@ -35,10 +31,9 @@ class HomeFragment : Fragment() {
 
         return root
     }
-
+    //----------------------------------------------------------------
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getActivity()?.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
        email = prefs.getEmail()
        cargarperfil()
         binding.btnEdit.setOnClickListener {
@@ -49,18 +44,20 @@ class HomeFragment : Fragment() {
 
     }
 
+    //----------------------------------------------------------------
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 
 
+    //----------------------------------------------------------------
     private fun comprobarEmail(){
         val email = prefs.getEmail()
        println(email)
     }
 
-
+    //----------------------------------------------------------------
     fun cargarperfil() {
 
         val db = FirebaseFirestore.getInstance()

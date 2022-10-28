@@ -7,12 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.navArgs
-import com.example.reto.R
-import com.example.reto.databinding.FragmentEditPerfilBinding
 import com.example.reto.databinding.FragmentEliminarOfertaBinding
-import com.example.reto.databinding.FragmentHomeBinding
-import com.example.reto.ui.home.EditPerfilFragmentArgs
 import com.google.firebase.firestore.FirebaseFirestore
+import java.text.SimpleDateFormat
 
 
 class EliminarOfertaFragment : Fragment() {
@@ -39,9 +36,13 @@ class EliminarOfertaFragment : Fragment() {
 
     // asignar texto a los campos
     private  fun asignarCampos(){
+        // convertir fecha ----------------------------------------------
+        val simpleDate  = SimpleDateFormat("dd/MM/yyyy HH:mm")
+        val currentDate = simpleDate.format(args.oferta.publicada!!)
+        //----------------------------------------------------------------
         binding.estado.text = args.oferta.asignada.toString()
         binding.nameTxt.text = args.oferta.name.toString()
-        binding.txtFecha.text = args.oferta.publicada.toString()
+        binding.txtFecha.text = currentDate
         binding.usuarioPublica.text = args.oferta.from.toString()
         binding.ubicacionTxt.text = args.oferta.ubicacion.toString()
         binding.descriptionTxt.text = args.oferta.descripcion.toString()

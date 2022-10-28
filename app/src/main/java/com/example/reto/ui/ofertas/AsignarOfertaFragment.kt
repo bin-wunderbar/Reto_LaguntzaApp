@@ -1,6 +1,5 @@
 package com.example.reto.ui.ofertas
 
-import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,13 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.navArgs
-import com.example.reto.Clases.RetoApplication
 import com.example.reto.Clases.RetoApplication.Companion.prefs
-import com.example.reto.R
 import com.example.reto.databinding.FragmentAsignarOfertaBinding
-import com.example.reto.databinding.FragmentEliminarOfertaBinding
 import com.google.firebase.firestore.FirebaseFirestore
-import java.util.*
+import java.text.SimpleDateFormat
 
 
 class AsignarOfertaFragment : Fragment() {
@@ -35,21 +31,22 @@ class AsignarOfertaFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        // Desactiva la rotacion de la pantalla
-        getActivity()?.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         super.onViewCreated(view, savedInstanceState)
 
         asignarCampos()
         asignarCandidato()
-
-
+        reportUser()
     }
 
     // asignar texto a los campos
     private  fun asignarCampos(){
+        // convertir fecha ----------------------------------------------
+        val simpleDate  = SimpleDateFormat("dd/MM/yyyy HH:mm")
+        val currentDate = simpleDate.format(args.oferta.publicada!!)
+        //----------------------------------------------------------------
         binding.estado.text = args.oferta.asignada.toString()
         binding.nameTxt.text = args.oferta.name.toString()
-        binding.txtFecha.text = args.oferta.publicada.toString()
+        binding.txtFecha.text = currentDate
         binding.usuarioPublica.text = args.oferta.from.toString()
         binding.ubicacionTxt.text = args.oferta.ubicacion.toString()
         binding.descriptionTxt.text = args.oferta.descripcion.toString()
@@ -84,5 +81,12 @@ class AsignarOfertaFragment : Fragment() {
         }
     }
 
-
+    // Reportar usuario
+    private fun reportUser(){
+        binding.btnReportar.setOnClickListener {
+            if (args.oferta.asignada.toString()=="false"){
+                Toast.makeText(binding.nameTxt.context, "Usuario reportado", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
 }

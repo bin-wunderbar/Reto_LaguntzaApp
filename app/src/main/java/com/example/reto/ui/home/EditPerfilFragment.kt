@@ -27,7 +27,6 @@ class EditPerfilFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         // Desactiva la rotacion de la pantalla
-        getActivity()?.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT)
         id= args.email
         super.onViewCreated(view, savedInstanceState)
 

@@ -39,7 +39,7 @@
 
     <string name="gestionar_usuarios_laguntzaapp" translatable="false">Gestionar Usuarios LaguntzaApp</string>
     <string name="ver_todos_los_usuarios" translatable="false">Todos</string>
-    <string name="ver_usuarios_con_reportes" translatable="false">Con reportes</string>
+    <string name="ver_usuarios_con_reportes" translatable="false">Reportes</string>
     <string name="userAdmin" translatable="false">Admin</string>
     <string name="menu_home" translatable="false">Home</string>
     <string name="chat" translatable="false">Chat</string>

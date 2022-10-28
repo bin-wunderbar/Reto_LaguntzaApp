@@ -1,16 +1,11 @@
 package com.example.reto.adapter
 
 import android.view.View
-import android.widget.Toast
-import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
-import androidx.navigation.fragment.findNavController
+
 import androidx.recyclerview.widget.RecyclerView
 import com.example.reto.Clases.RetoApplication.Companion.prefs
 import com.example.reto.databinding.ItemOfertasGeneralesBinding
 import com.example.reto.modelo.Ofertas
-import com.example.reto.ui.ofertas.FavoresFragmentDirections
-import com.google.firebase.firestore.FirebaseFirestore
 import java.text.SimpleDateFormat
 
 class OfertasViewHolder (view: View) : RecyclerView.ViewHolder(view) {

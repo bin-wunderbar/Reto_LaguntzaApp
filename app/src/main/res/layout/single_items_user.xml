@@ -64,8 +64,8 @@
 
             <EditText
                 android:id="@+id/numReportes"
-                android:layout_width="24dp"
-                android:layout_height="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:textColor="#CE9563"
                 android:text="0"

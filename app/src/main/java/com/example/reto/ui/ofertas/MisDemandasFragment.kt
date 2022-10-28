@@ -10,11 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.reto.Clases.RetoApplication
 import com.example.reto.Clases.RetoApplication.Companion.prefs
 import com.example.reto.R
 import com.example.reto.adapter.RvAdapterDemanda
-import com.example.reto.adapter.RvAdapterOfertas
 import com.example.reto.databinding.FragmentMisDemandasBinding
 import com.example.reto.modelo.Ofertas
 import com.google.firebase.firestore.FirebaseFirestore
