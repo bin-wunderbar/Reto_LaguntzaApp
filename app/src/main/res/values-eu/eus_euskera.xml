@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LaguntzApp</string>
+    <!--LOGIN-->
+    <string name="iniciar_sesion">Saioa hasi</string>
+    <string name="Registro">Erregistratu</string>
+    <!--REGISTRO-->
+    <string name="Registrar">Erregistratu</string>
+    <string name="RegistrarNombre">Izena</string>
+    <string name="RegistrarApellido">Abizenak</string>
+    <string name="RegistrarLocalidad">Kokapena</string>
+    <string name="RegistrarEmail">Email</string>
+    <string name="RegistrarPass">Pasahitza</string>
+    <string name="RegistrarPassconfirmar">Pasahitza baieztatu</string>
+    <string name="terminosycondiciones">Irakurri eta onartzen dut</string>
+    <string name="terminosycondicionesboton">terminoak eta baldintzak</string>
+    <!--PERFIL DE USUARIO FRAGMENTHOME-->
+    <string name="botoneditarperfil">Editatu profila</string>
+    <!--EDICION DE PERFIL FRAGMENTEDITPERFIL-->
+
+    <string name="botoneditarperfilCONFIRMARCAMBIOS">Aldaketak konprometitu</string>
+
+    <!--FRAGMENTADDEMANDA-->
+    <string name="titulodemanda">Argitalpenaren izenburua</string>
+    <string name="Descripciondemanda">Erreklamazioaren deskribapen laburra</string>
+    <string name="LocalidadDemanda">Kokapena</string>
+    <string name="FechaDemanda">Auziaren iraungitze-data</string>
+    <string name="Horasdelademanda">orduen kostua</string>
+    <string name="publicarfavor">Mesedea publikatu</string>
+</resources>

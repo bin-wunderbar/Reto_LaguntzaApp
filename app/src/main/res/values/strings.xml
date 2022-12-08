@@ -1,6 +1,50 @@
 <resources>
-    <string name="app_name">Reto</string>
-    <string name="action_2">cerrar</string>
-    <string name="action_1">entrar</string>
-    <string name="oferta">We have more than 1000 active users at LaguntzaApp, and we rank among the top five downloads on the Play Store in Euskadi.</string>
+
+    <string name="app_name">LaguntzApp</string>
+
+    <!--LOGIN-->
+
+    <string name="iniciar_sesion">Iniciar sesion</string>
+    <string name="Registro">Registrate</string>
+
+    <!--REGISTRO-->
+
+    <string name="Registrar">Registrate</string>
+    <string name="RegistrarNombre">Nombre</string>
+    <string name="RegistrarApellido">Apellidos</string>
+    <string name="RegistrarLocalidad">Localidad</string>
+    <string name="RegistrarEmail">Email</string>
+    <string name="RegistrarPass">Password</string>
+    <string name="RegistrarPassconfirmar">Confirmar Password</string>
+    <string name="terminosycondiciones">He leido y acepto los</string>
+    <string name="terminosycondicionesboton">Terminos y condiciones</string>
+
+    <!--FRAGMENTHOME-->
+
+    <string name="botoneditarperfil">Editar Perfil</string>
+
+    <!--FRAGMENTEDITPERFIL-->
+
+    <string name="botoneditarperfilCONFIRMARCAMBIOS">Confirmar cambios</string>
+
+    <!--FRAGMENTADDEMANDA-->
+    <string name="titulodemanda">Titulo de la publicacion</string>
+    <string name="Descripciondemanda">Breve descripcion de la demanda</string>
+    <string name="LocalidadDemanda">Localidad</string>
+    <string name="FechaDemanda">Fecha de caducidad de la demanda</string>
+    <string name="Horasdelademanda">Coste de horas</string>
+    <string name="publicarfavor">Publicar favor</string>
+    <string name="email" translatable="false">Email</string>
+
+
+    <string name="gestionar_usuarios_laguntzaapp" translatable="false">Gestionar Usuarios LaguntzaApp</string>
+    <string name="ver_todos_los_usuarios" translatable="false">Todos</string>
+    <string name="ver_usuarios_con_reportes" translatable="false">Reportes</string>
+    <string name="userAdmin" translatable="false">Admin</string>
+    <string name="menu_home" translatable="false">Home</string>
+    <string name="chat" translatable="false">Chat</string>
+    <string name="favores" translatable="false">Favores</string>
+    <string name="salir" translatable="false">Salir</string>
+
+
 </resources>
