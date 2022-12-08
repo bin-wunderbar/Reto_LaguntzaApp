@@ -32,6 +32,7 @@ class DetailUserFragment : Fragment(R.layout.fragment_detail_user) {
             binding.numReportes.setText("${user.reportes}")
         }
 
+
     }
 
 }
